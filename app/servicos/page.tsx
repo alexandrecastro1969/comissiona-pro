@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Factory, Laptop2, BookOpen, Users } from 'lucide-react'
+import { Factory, Laptop2, BookOpen, Users, Shield, Settings, Layout, Wrench } from 'lucide-react'
 
 export default function Servicos() {
   const servicos = [
@@ -51,6 +51,54 @@ export default function Servicos() {
         "Uso de ferramentas digitais"
       ],
       icone: <Users className="h-8 w-8 text-primary" />
+    },
+    {
+      titulo: "Planejamento de Paradas",
+      descricao: "Gestão completa de paradas de manutenção industrial, garantindo:",
+      topicos: [
+        "Planejamento detalhado de shutdown",
+        "Coordenação de liberação da planta",
+        "Gestão de retorno às operações",
+        "Otimização de cronogramas",
+        "Minimização de tempo de parada"
+      ],
+      icone: <Wrench className="h-8 w-8 text-primary" />
+    },
+    {
+      titulo: "Análise de Risco (HAZOP)",
+      descricao: "Expertise em identificação e avaliação de riscos de processo, incluindo:",
+      topicos: [
+        "Condução de estudos HAZOP",
+        "Identificação de desvios de processo",
+        "Avaliação de consequências",
+        "Recomendações de segurança",
+        "Documentação técnica especializada"
+      ],
+      icone: <Shield className="h-8 w-8 text-primary" />
+    },
+    {
+      titulo: "Otimização de Processos",
+      descricao: "Implementação de metodologias de melhoria contínua:",
+      topicos: [
+        "Aplicação de Six Sigma",
+        "Implementação Lean Manufacturing",
+        "Redução de desperdícios",
+        "Melhoria de eficiência",
+        "Indicadores de performance"
+      ],
+      icone: <Settings className="h-8 w-8 text-primary" />
+    },
+    {
+      titulo: "Sistemas de Produção",
+      descricao: "Implementação de sistemas de gestão da produção baseados em:",
+      topicos: [
+        "Metodologia TPM",
+        "Programa 5S",
+        "Manutenção autônoma",
+        "Gestão visual",
+        "Melhoria contínua"
+      ],
+      icone: <Layout className="h-8 w-8 text-primary" />
     }
   ]
 
@@ -87,7 +135,7 @@ export default function Servicos() {
         {/* Cards Section */}
         <section className="py-16">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {servicos.map((servico, index) => (
                 <Card 
                   key={index} 
