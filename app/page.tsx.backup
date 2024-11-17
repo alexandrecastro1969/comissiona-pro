@@ -1,0 +1,155 @@
+import Image from 'next/image'
+import Link from 'next/link'
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { FileText, Briefcase, PhoneCall, Timer, CheckCircle2, Award } from 'lucide-react'
+
+export default function Home() {
+  const destaques = [
+    {
+      numero: "30+",
+      texto: "Anos de Experiência",
+      icone: <Timer className="h-8 w-8 text-primary" />
+    },
+    {
+      numero: "10+",
+      texto: "Projetos Concluídos",
+      icone: <CheckCircle2 className="h-8 w-8 text-primary" />
+    },
+    {
+      numero: "100%",
+      texto: "Clientes Satisfeitos",
+      icone: <Award className="h-8 w-8 text-primary" />
+    }
+  ]
+
+  const cards = [
+    {
+      titulo: "Projetos",
+      descricao: "Conheça nossos casos de sucesso em comissionamento industrial, incluindo projetos complexos na Braskem e outras grandes empresas do setor.",
+      icone: <Briefcase className="h-6 w-6 text-primary" />,
+      link: "/projetos",
+      buttonText: "Ver Projetos"
+    },
+    {
+      titulo: "Blog",
+      descricao: "Artigos técnicos, insights do setor e as últimas novidades em comissionamento industrial e gestão de projetos.",
+      icone: <FileText className="h-6 w-6 text-primary" />,
+      link: "/blog",
+      buttonText: "Ler Blog"
+    },
+    {
+      titulo: "Contato",
+      descricao: "Entre em contato para discutir seu próximo projeto. Nossa equipe está pronta para oferecer soluções personalizadas para suas necessidades.",
+      icone: <PhoneCall className="h-6 w-6 text-primary" />,
+      link: "/contato",
+      buttonText: "Contatar"
+    }
+  ]
+
+  return (
+    <div className="relative min-h-screen">
+      {/* Background Image */}
+      <div className="fixed inset-0 z-0">
+        <Image
+          src="/images/petroquimica.png"
+          alt="Background"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
+        {/* Overlay escuro */}
+        <div className="absolute inset-0 bg-black/50" />
+      </div>
+
+      {/* Conteúdo */}
+      <div className="relative z-10 min-h-screen flex flex-col">
+        {/* Hero Section */}
+        <main className="flex-grow container mx-auto px-4 py-16">
+          <div className="max-w-4xl mx-auto text-center text-white space-y-8">
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+              Excelência em<br />Comissionamento Industrial
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-200">
+              Três décadas de experiência transformando projetos complexos em operações bem-sucedidas
+            </p>
+            <div className="flex justify-center gap-4">
+              <Link href="/servicos">
+                <Button variant="default" size="lg" className="text-lg">
+                  Nossos Serviços
+                </Button>
+              </Link>
+              <Link href="/contato">
+                <Button variant="outline" size="lg" className="text-lg bg-white/10 text-white hover:bg-white hover:text-black">
+                  Fale Conosco
+                </Button>
+              </Link>
+            </div>
+          </div>
+
+          {/* Destaques */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20 max-w-4xl mx-auto">
+            {destaques.map((destaque, index) => (
+              <Card key={index} className="backdrop-blur-sm bg-white/10 border-none">
+                <CardContent className="p-6 text-center text-white">
+                  <div className="flex justify-center mb-4">
+                    {destaque.icone}
+                  </div>
+                  <h3 className="text-3xl font-bold mb-2">{destaque.numero}</h3>
+                  <p className="text-gray-200">{destaque.texto}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
+            {cards.map((card, index) => (
+              <Card 
+                key={index} 
+                className="backdrop-blur-sm bg-white/90 transform transition-all duration-300 hover:scale-[1.02]"
+              >
+                <CardContent className="p-6 text-center flex flex-col h-full">
+                  <div className="flex justify-center mb-4">
+                    {card.icone}
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4">
+                    {card.titulo}
+                  </h3>
+                  <p className="text-gray-600 flex-grow mb-6">
+                    {card.descricao}
+                  </p>
+                  <Link href={card.link}>
+                    <Button variant="outline" className="w-full bg-white/10 hover:bg-primary hover:text-white">
+                      {card.buttonText}
+                    </Button>
+                  </Link>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </main>
+
+        {/* Footer */}
+        <footer className="relative z-10 py-4">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col md:flex-row justify-between items-center text-white/80 text-sm">
+              <div className="mb-4 md:mb-0">
+                © 2024 Comissiona Pro. Todos os direitos reservados.
+              </div>
+              <div className="flex gap-4">
+                <Link href="/termos" className="hover:text-white">
+                  Termos de Uso
+                </Link>
+                <Link href="/privacidade" className="hover:text-white">
+                  Política de Privacidade
+                </Link>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  )
+}
