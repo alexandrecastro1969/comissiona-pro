@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Factory, Laptop2, BookOpen, Users, Shield, Settings, Layout, Tool } from 'lucide-react'
+import { Factory, Laptop2, BookOpen, Users, Shield, Settings, Layout, Wrench } from 'lucide-react'
 
 export default function Servicos() {
   const servicos = [
@@ -62,7 +62,7 @@ export default function Servicos() {
         "Otimização de cronogramas",
         "Minimização de tempo de parada"
       ],
-      icone: <Tool className="h-8 w-8 text-primary" />
+      icone: <Wrench className="h-8 w-8 text-primary" />
     },
     {
       titulo: "Análise de Risco (HAZOP)",
