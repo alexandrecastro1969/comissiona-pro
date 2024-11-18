@@ -60,3 +60,21 @@ Site institucional otimizado para alta performance em comissionamento industrial
 - ♿ Accessibility: 94/100
 - 🎯 Best Practices: 100/100
 - 🔍 SEO: 100/100
+
+# Comissiona Pro
+
+## Deploy
+O projeto está disponível em: [https://comissiona-pro.vercel.app](https://comissiona-pro.vercel.app)
+
+## Performance
+Desktop:
+- Desempenho: 98
+- Acessibilidade: 98
+- Práticas recomendadas: 100
+- SEO: 100
+
+Mobile:
+- Desempenho: 99
+- Acessibilidade: 94
+- Práticas recomendadas: 100
+- SEO: 100
