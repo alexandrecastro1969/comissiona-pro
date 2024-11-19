@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "buildCommand": "next build",
-  "devCommand": "next dev",
   "framework": "nextjs",
+  "buildCommand": "next build",
   "installCommand": "npm install",
+  "devCommand": "next",
   "regions": ["gru1"],
   "headers": [
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "headers": [
         {
           "key": "X-Content-Type-Options",
