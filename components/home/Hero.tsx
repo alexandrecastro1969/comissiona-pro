@@ -9,7 +9,7 @@ export default function Hero() {
           Comissionamento<br />Industrial
         </span>
         <span className="hidden md:inline">
-          Excelência em<br />Comissionamento Industrial
+          Comissionamento Industrial e Treinamento
         </span>
       </h1>
       <p className="text-lg sm:text-xl md:text-2xl text-gray-200">
