@@ -6,6 +6,32 @@ import { CheckCircle2, AlertTriangle, Trophy, Tag } from 'lucide-react'
 export default function Projetos() {
   const projetos = [
     {
+      titulo: "PMS - Paulínia - Estágio",
+      tecnologia: "Spheripol",
+      periodo: "2007",
+      tipo: "Treinamento",
+      escopo: [
+        "Segurança do processo",
+        "Automação",
+        "Elétrica",
+        "Instrumentação",
+        "Laboratório",
+        "Produtos e Aplicações",
+        "Equipamentos Industriais"
+      ],
+      desafios: [
+        "Carga horária de 480h",
+        "Carga semanal de 8h/dia",
+        "Estágio on site de 4 meses em planta em operação"
+      ],
+      resultados: [
+        "Transferência de conhecimento profundo sobre a tecnologia",
+        "Criação de uma cultura de segurança ligada a cada tarefa",
+        "Grande apoio da equipe formada durante todo o projeto"
+      ],
+      tags: ["Petroquímica", "Spheripol", "Treinamento", "Segurança"]
+    },
+    {
       titulo: "PP3 Paulínia - Braskem",
       tecnologia: "Spheripol",
       periodo: "2007-2008",
