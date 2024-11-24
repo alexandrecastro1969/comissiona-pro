@@ -1,35 +1,36 @@
-import Link from 'next/link'
+'use client'
+
 import { FileText, Briefcase, PhoneCall } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-
-const cards = [
-  {
-    titulo: "Projetos",
-    descricao: "Conheça nossos casos de sucesso em comissionamento industrial, incluindo projetos complexos na Braskem e outras grandes empresas do setor.",
-    icone: <Briefcase className="h-6 w-6 text-primary" />,
-    link: "/projetos",
-    buttonText: "Ver Projetos"
-  },
-  {
-    titulo: "Blog",
-    descricao: "Artigos técnicos, insights do setor e as últimas novidades em comissionamento industrial e gestão de projetos.",
-    icone: <FileText className="h-6 w-6 text-primary" />,
-    link: "/blog",
-    buttonText: "Ler Blog"
-  },
-  {
-    titulo: "Contato",
-    descricao: "Entre em contato para discutir seu próximo projeto. Nossa equipe está pronta para oferecer soluções personalizadas para suas necessidades.",
-    icone: <PhoneCall className="h-6 w-6 text-primary" />,
-    link: "/contato",
-    buttonText: "Contatar"
-  }
-]
+import { useTranslations } from 'next-intl'
+import { Link } from '@/navigation'
+import { useLocale } from 'next-intl'
 
 export default function ServiceCards() {
+  const t = useTranslations('home')
+  const routesT = useTranslations('routes')
+  const locale = useLocale()
+
+  const cards = [
+    {
+      titleKey: "cards.projects.title",
+      descriptionKey: "cards.projects.description",
+      icone: <Briefcase className="h-6 w-6 text-primary" />,
+      linkKey: "projects",
+      buttonKey: "cards.projects.button"
+    },
+    {
+      titleKey: "cards.contact.title",
+      descriptionKey: "cards.contact.description",
+      icone: <PhoneCall className="h-6 w-6 text-primary" />,
+      linkKey: "contact",
+      buttonKey: "cards.contact.button"
+    }
+  ]
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-20">
       {cards.map((card, index) => (
         <Card 
           key={index} 
@@ -40,14 +41,14 @@ export default function ServiceCards() {
               {card.icone}
             </div>
             <h3 className="text-xl font-semibold mb-4">
-              {card.titulo}
+              {t(card.titleKey)}
             </h3>
             <p className="text-gray-600 flex-grow mb-6">
-              {card.descricao}
+              {t(card.descriptionKey)}
             </p>
-            <Link href={card.link}>
+            <Link href={routesT(card.linkKey)} className="w-full">
               <Button variant="outline" className="w-full bg-white/10 hover:bg-primary hover:text-white">
-                {card.buttonText}
+                {t(card.buttonKey)}
               </Button>
             </Link>
           </CardContent>

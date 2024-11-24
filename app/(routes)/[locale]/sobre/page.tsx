@@ -1,27 +1,35 @@
 import Image from 'next/image'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Building2, Users2, Target, Award } from 'lucide-react'
+import { useTranslations } from 'next-intl'
+
+export const metadata = {
+  title: 'Sobre | Comissiona Pro',
+  description: 'Três décadas de experiência em comissionamento industrial, transformando conhecimento em excelência operacional.',
+}
 
 export default function Sobre() {
+  const t = useTranslations('about');
+
   const cards = [
     {
-      titulo: "Nossa História",
-      conteudo: "Com mais de 30 anos de experiência em comissionamento industrial, nossa jornada começou na Braskem, onde desenvolvemos expertise única em projetos complexos de plantas petroquímicas. Esta experiência nos permitiu criar metodologias eficientes e inovadoras para o comissionamento de plantas industriais.",
+      titulo: t('cards.history.title'),
+      conteudo: t('cards.history.content'),
       icone: <Building2 className="h-8 w-8 text-primary" />
     },
     {
-      titulo: "Nossa Equipe",
-      conteudo: "Contamos com profissionais altamente qualificados e experientes, com décadas de atuação em comissionamento industrial. Nossa equipe combina conhecimento técnico profundo com habilidades práticas, garantindo excelência em cada projeto.",
+      titulo: t('cards.team.title'),
+      conteudo: t('cards.team.content'),
       icone: <Users2 className="h-8 w-8 text-primary" />
     },
     {
-      titulo: "Nossa Missão",
-      conteudo: "Entregar excelência em comissionamento industrial, garantindo a partida segura e eficiente de plantas industriais. Buscamos constantemente inovar em nossas metodologias e ferramentas, sempre focando na satisfação total de nossos clientes.",
+      titulo: t('cards.mission.title'),
+      conteudo: t('cards.mission.content'),
       icone: <Target className="h-8 w-8 text-primary" />
     },
     {
-      titulo: "Nossos Valores",
-      conteudo: "Comprometimento com a segurança, excelência técnica, inovação constante e satisfação do cliente são os pilares que norteiam nossa atuação. Acreditamos que o sucesso de nossos clientes é nosso próprio sucesso.",
+      titulo: t('cards.values.title'),
+      conteudo: t('cards.values.content'),
       icone: <Award className="h-8 w-8 text-primary" />
     }
   ]
@@ -32,7 +40,7 @@ export default function Sobre() {
       <div className="fixed inset-0 z-0">
         <Image
           src="/images/sobre.webp"
-          alt="Background Sobre"
+          alt={t('background.alt')}
           fill
           className="object-cover"
           priority
@@ -48,11 +56,10 @@ export default function Sobre() {
         <section className="py-20">
           <div className="container mx-auto px-4">
             <h1 className="text-4xl md:text-5xl font-bold text-white text-center">
-              Sobre Nós
+              {t('hero.title')}
             </h1>
             <p className="text-xl text-gray-200 text-center mt-4 max-w-3xl mx-auto">
-              Três décadas de experiência em comissionamento industrial, 
-              transformando conhecimento em excelência operacional.
+              {t('hero.description')}
             </p>
           </div>
         </section>
@@ -84,20 +91,16 @@ export default function Sobre() {
         </section>
 
         {/* Experiência Section */}
-        <section className="py-16 bg-white/10 backdrop-blur-sm">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center text-white">
-              <h2 className="text-3xl font-bold mb-6">Nossa Experiência</h2>
-              <p className="text-lg leading-relaxed">
-                Nossa trajetória na Braskem nos proporcionou uma perspectiva única 
-                no comissionamento de plantas industriais. Participamos de projetos 
-                cruciais como as Plantas Piloto P2 e P3, além do projeto greenfield 
-                PP3 em Paulínia, desenvolvendo metodologias inovadoras e eficientes 
-                para o comissionamento industrial.
-              </p>
-            </div>
+      <section className="py-16 bg-white/10 backdrop-blur-sm">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center text-white">
+            <h2 className="text-3xl font-bold mb-6">{t('experience.title')}</h2>
+            <p className="text-lg leading-relaxed">
+              {t('experience.description')}
+            </p>
           </div>
-        </section>
+        </div>
+      </section>
       </div>
     </div>
   )

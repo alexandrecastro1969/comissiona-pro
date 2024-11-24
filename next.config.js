@@ -1,25 +1,26 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**',
-      },
-    ],
-  },
-  webpack: (config) => {
-    config.resolve.fallback = { fs: false };
-    return config;
-  },
-  // Adicione estas otimizações
-  experimental: {
-    optimizeCss: true,
-  },
-  poweredByHeader: false,
-  compress: true,
-  reactStrictMode: true,
-  swcMinify: true,
-};
+const withNextIntl = require('next-intl/plugin')('./i18n/request.ts');
 
-module.exports = nextConfig;
+const nextConfig = {
+  // Configurações de cache
+  onDemandEntries: {
+    // Período que a página deve permanecer em buffer
+    maxInactiveAge: 25 * 1000,
+    // Número de páginas que devem ser mantidas em buffer
+    pagesBufferLength: 4,
+  },
+
+  // Otimizações gerais
+  swcMinify: true,
+  compress: true,
+  optimizeFonts: true,
+  
+  // Cache de imagens
+  images: {
+    minimumCacheTTL: 60,
+    deviceSizes: [640, 750, 828, 1080, 1200],
+    imageSizes: [16, 32, 48, 64, 96],
+  },
+}
+
+module.exports = withNextIntl(nextConfig);

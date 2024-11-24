@@ -1,159 +1,157 @@
 import Image from 'next/image'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { CheckCircle2, AlertTriangle, Trophy, Tag } from 'lucide-react'
+import { CheckCircle2, AlertTriangle, Trophy } from 'lucide-react'
+import { getTranslations } from 'next-intl/server'
 
-export default function Projetos() {
+export default async function Projetos({ params: { locale } }: { params: { locale: string } }) {
+  const t = await getTranslations('projects')
+
   const projetos = [
     {
-      titulo: "PMS - Paulínia - Estágio",
+      titulo: t('projectTitles.pms'),
       tecnologia: "Spheripol",
       periodo: "2007",
-      tipo: "Treinamento",
+      tipo: t('types.training'),
       escopo: [
-        "Segurança do processo",
-        "Automação",
-        "Elétrica",
-        "Instrumentação",
-        "Laboratório",
-        "Produtos e Aplicações",
-        "Equipamentos Industriais"
+        t('scope.processSafety'),
+        t('scope.automation'),
+        t('scope.electrical'),
+        t('scope.instrumentation'),
+        t('scope.laboratory'),
+        t('scope.products'),
+        t('scope.equipment')
       ],
       desafios: [
-        "Carga horária de 480h",
-        "Carga semanal de 8h/dia",
-        "Estágio on site de 4 meses em planta em operação"
+        t('challenges.hours480'),
+        t('challenges.weekly8h'),
+        t('challenges.onsite4months')
       ],
       resultados: [
-        "Transferência de conhecimento profundo sobre a tecnologia",
-        "Criação de uma cultura de segurança ligada a cada tarefa",
-        "Grande apoio da equipe formada durante todo o projeto"
+        t('results.knowledge'),
+        t('results.safety'),
+        t('results.team')
       ],
-      tags: ["Petroquímica", "Spheripol", "Treinamento", "Segurança"]
+      tags: [t('tags.petrochemical'), t('tags.spheripol'), t('tags.training'), t('tags.safety')]
     },
     {
-      titulo: "PP3 Paulínia - Braskem",
+      titulo: t('projectTitles.pp3'),
       tecnologia: "Spheripol",
       periodo: "2007-2008",
-      tipo: "Greenfield",
+      tipo: t('types.greenfield'),
       escopo: [
-        "Montagem",
-        "Pré-comissionamento",
-        "Comissionamento",
-        "Partida"
+        t('scope.assembly'),
+        t('scope.precommissioning'),
+        t('scope.commissioning'),
+        t('scope.startup')
       ],
       desafios: [
-        "Primeiro projeto greenfield da Braskem",
-        "Prazo desafiador de 22 meses",
-        "Complexidade de nova unidade"
+        t('challenges.firstGreenfield'),
+        t('challenges.deadline22months'),
+        t('challenges.newUnitComplexity')
       ],
       resultados: [
-        "Partida dentro do prazo",
-        "Implementação bem-sucedida",
-        "Marco na história da empresa"
+        t('results.onTime'),
+        t('results.successfulImplementation'),
+        t('results.companyMilestone')
       ],
-      tags: ["Petroquímica", "Polipropileno", "Greenfield", "Spheripol"]
+      tags: [t('tags.petrochemical'), t('tags.polypropylene'), t('tags.greenfield'), t('tags.spheripol')]
     },
     {
-      titulo: "Planta Piloto P4 - Braskem",
-      tecnologia: "Uivation",
+      titulo: t('projectTitles.p4'),
+      tecnologia: "Univation",
       periodo: "2004",
-      tipo: "Planta Piloto",
+      tipo: t('types.pilot'),
       escopo: [
-        "Montagem",
-        "Pré-comissionamento",
-        "Comissionamento",
-        "Partida"
+        t('scope.assembly'),
+        t('scope.precommissioning'),
+        t('scope.commissioning'),
+        t('scope.startup')
       ],
       desafios: [
-        "Alteração da planta P2 Univation",
-        "Adaptação de sistemas existentes"
+        t('challenges.firstSkid'),
+        t('challenges.utilitiesIntegration'),
+        t('challenges.zeroIncidents')
       ],
       resultados: [
-        "Flexibilidade para produção",
-        "Otimização de recursos existentes"
+        t('results.successfulStartup'),
+        t('results.safeIntegration'),
+        t('results.pioneerUnivation')
       ],
-      tags: ["Petroquímica", "Polietileno", "Univation"]
+      tags: [t('tags.petrochemical'), t('tags.polyethylene'), t('tags.univation'), t('tags.skid')]
     },
     {
-      titulo: "Planta Piloto P3 - Braskem",
+      titulo: t('projectTitles.p3'),
       tecnologia: "Spherilene",
       periodo: "1998",
-      tipo: "Planta Piloto",
+      tipo: t('types.pilot'),
       escopo: [
-        "Montagem",
-        "Pré-comissionamento",
-        "Comissionamento",
-        "Partida"
+        t('scope.assembly'),
+        t('scope.precommissioning'),
+        t('scope.commissioning'),
+        t('scope.startup')
       ],
       desafios: [
-        "Conversão de planta P1 Spheripol para tecnologia Spherilene",
-        "Transformação em planta swing",
-        "Adaptação de sistemas existentes"
+        t('challenges.p1Conversion'),
+        t('challenges.swingPlant'),
+        t('challenges.systemsAdaptation')
       ],
       resultados: [
-        "Planta swing operacional",
-        "Flexibilidade para duas tecnologias",
-        "Otimização de recursos existentes"
+        t('results.productionFlexibility'),
+        t('results.resourceOptimization'),
+        t('results.operationalSwing')
       ],
-      tags: ["Petroquímica", "Polietileno", "Spherilene", "Planta Swing"]
+      tags: [t('tags.petrochemical'), t('tags.polyethylene'), t('tags.spherilene'), t('tags.swingPlant')]
     },
     {
-      titulo: "Planta Piloto P2 - Braskem",
+      titulo: t('projectTitles.p2'),
       tecnologia: "Univation",
       periodo: "1997",
-      tipo: "Planta Piloto",
+      tipo: t('types.pilot'),
       escopo: [
-        "Montagem",
-        "Pré-comissionamento",
-        "Comissionamento",
-        "Partida"
+        t('scope.assembly'),
+        t('scope.precommissioning'),
+        t('scope.commissioning'),
+        t('scope.startup')
       ],
       desafios: [
-        "Primeira planta recebida em skid compacto",
-        "Interligações com utilidades de unidades em operação",
-        "Zero incidentes durante execução"
+        t('challenges.p2UnivationChange'),
+        t('challenges.existingSystemsAdaptation')
       ],
       resultados: [
-        "Partida bem-sucedida",
-        "Integração segura com unidades existentes",
-        "Implementação pioneira de tecnologia Univation"
+        t('results.twoTechFlexibility'),
+        t('results.existingOptimization')
       ],
-      tags: ["Petroquímica", "Polietileno", "Skid", "Univation"]
+      tags: [t('tags.petrochemical'), t('tags.polyethylene'), t('tags.univation')]
     }
   ]
 
   return (
     <div className="relative min-h-screen">
-      {/* Background Image */}
       <div className="fixed inset-0 z-0">
         <Image
           src="/images/projetos.webp"
-          alt="Background Projetos"
+          alt={t('background.alt')}
           fill
           className="object-cover"
           priority
           sizes="100vw"
         />
-        {/* Overlay escuro */}
         <div className="absolute inset-0 bg-black/50" />
       </div>
 
-      {/* Conteúdo */}
       <div className="relative z-10">
-        {/* Hero Section */}
         <section className="py-20">
           <div className="container mx-auto px-4">
             <h1 className="text-4xl md:text-5xl font-bold text-white text-center">
-              Nossos Projetos
+              {t('title')}
             </h1>
             <p className="text-xl text-gray-200 text-center mt-4">
-              Conheça alguns dos nossos casos de sucesso
+              {t('subtitle')}
             </p>
           </div>
         </section>
 
-        {/* Projetos */}
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-6">
@@ -182,7 +180,7 @@ export default function Projetos() {
                       <div className="bg-white p-6 rounded-lg border border-gray-100 shadow-sm min-h-[160px]">
                         <h4 className="font-bold mb-4 flex items-center gap-2 text-lg text-primary">
                           <CheckCircle2 className="h-5 w-5 text-primary" />
-                          Escopo
+                          {t('sections.scope')}
                         </h4>
                         <ul className="list-disc list-inside text-sm space-y-2 text-gray-600">
                           {projeto.escopo.map((item, i) => (
@@ -194,7 +192,7 @@ export default function Projetos() {
                       <div className="bg-blue-50 p-6 rounded-lg border border-blue-100 shadow-sm min-h-[160px]">
                         <h4 className="font-bold mb-4 flex items-center gap-2 text-lg text-blue-700">
                           <AlertTriangle className="h-5 w-5 text-blue-700" />
-                          Principais Desafios
+                          {t('sections.challenges')}
                         </h4>
                         <ul className="list-disc list-inside text-sm space-y-2 text-gray-600">
                           {projeto.desafios.map((desafio, i) => (
@@ -206,7 +204,7 @@ export default function Projetos() {
                       <div className="bg-green-100 p-6 rounded-lg border border-green-200 shadow-sm min-h-[160px]">
                         <h4 className="font-bold mb-4 flex items-center gap-2 text-lg text-green-700">
                           <Trophy className="h-5 w-5 text-green-700" />
-                          Resultados
+                          {t('sections.results')}
                         </h4>
                         <ul className="list-disc list-inside text-sm space-y-2 text-gray-600">
                           {projeto.resultados.map((resultado, i) => (

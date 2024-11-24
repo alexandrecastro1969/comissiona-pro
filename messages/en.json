@@ -1,0 +1,435 @@
+{
+  "home": {
+    "background": {
+      "alt": "Petrochemical Industry"
+    },
+   
+    "hero": {
+      "title": "Industrial Commissioning",
+      "subtitle": "Excellence and Innovation",
+      "description": "Specialized solutions for safe and efficient industrial plant startup"
+    },
+    "highlights": {
+      "experience": "Years of Experience",
+      "projects": "Major Projects Completed",
+      "clients": "Client Satisfaction Rate"
+    },
+    "cards": {
+      "title": "Our Solutions",
+      "items": {
+        "commissioning": {
+          "title": "Industrial Commissioning",
+          "description": "Complete management of industrial plant startup"
+        },
+        "software": {
+          "title": "Digital Solutions",
+          "description": "Specialized software for commissioning management"
+        },
+        "consulting": {
+          "title": "Technical Consulting",
+          "description": "Expert advice for industrial projects"
+        }
+      },
+      "projects": {
+        "title": "Our Projects",
+        "description": "Check out our successful industrial commissioning projects",
+        "button": "View Projects"
+      },
+      "contact": {
+        "title": "Contact Us",
+        "description": "Get in touch to discuss your project needs",
+        "button": "Contact"
+      }
+    },
+    "footer": {
+      "copyright": "© 2024 Comissiona Pro. All rights reserved.",
+      "terms": "Terms of Use",
+      "privacy": "Privacy Policy"
+    }
+  },
+  "services": {
+    "meta": {
+      "title": "Services | Comissiona Pro",
+      "description": "Complete industrial commissioning solutions, combining technical expertise with digital innovation"
+    },
+    "hero": {
+      "title": "Our Services",
+      "description": "Complete industrial commissioning solutions, combining technical expertise with digital innovation"
+    },
+    "background": {
+      "alt": "Services Background"
+    },
+    "commissioning": {
+      "title": "Industrial Commissioning",
+      "description": "Specialized commissioning services to ensure safe and efficient operation of industrial systems. Our methodology covers all project phases:",
+      "topics": {
+        "1": "Commissioning planning and strategy",
+        "2": "Development of specific procedures",
+        "3": "Supervision and execution of activities",
+        "4": "Detailed documentation and reports",
+        "5": "Interface management between disciplines"
+      }
+    },
+    "software": {
+      "title": "Commissioning Management Software",
+      "description": "Specialized digital solutions to manage the entire commissioning cycle, offering:",
+      "topics": {
+        "1": "Complete real-time activity control",
+        "2": "Technical documentation management",
+        "3": "Progress tracking and KPIs",
+        "4": "Pending items traceability",
+        "5": "Automated reporting"
+      }
+    },
+    "consulting": {
+      "title": "Technical Consulting",
+      "description": "Specialized consulting for industrial projects, sharing knowledge and best practices in:",
+      "topics": {
+        "1": "Process analysis and optimization",
+        "2": "Procedure development",
+        "3": "Risk and safety assessment",
+        "4": "Specialized technical support",
+        "5": "Improvement recommendations"
+      }
+    },
+    "training": {
+      "title": "Training",
+      "description": "Customized training programs for operation and maintenance teams, including:",
+      "topics": {
+        "1": "Commissioning fundamentals",
+        "2": "Industrial safety practices",
+        "3": "Specific systems operation",
+        "4": "Technical documentation management",
+        "5": "Digital tools usage"
+      }
+    },
+    "shutdown": {
+      "title": "Shutdown Planning",
+      "description": "Complete management of industrial maintenance shutdowns, ensuring:",
+      "topics": {
+        "1": "Detailed shutdown planning",
+        "2": "Plant release coordination",
+        "3": "Return to operations management",
+        "4": "Schedule optimization",
+        "5": "Downtime minimization"
+      }
+    },
+    "hazop": {
+      "title": "Risk Analysis (HAZOP)",
+      "description": "Expertise in process risk identification and assessment, including:",
+      "topics": {
+        "1": "HAZOP studies conduction",
+        "2": "Process deviation identification",
+        "3": "Consequence assessment",
+        "4": "Safety recommendations",
+        "5": "Specialized technical documentation"
+      }
+    },
+    "optimization": {
+      "title": "Process Optimization",
+      "description": "Implementation of continuous improvement methodologies:",
+      "topics": {
+        "1": "Six Sigma application",
+        "2": "Lean Manufacturing implementation",
+        "3": "Waste reduction",
+        "4": "Efficiency improvement",
+        "5": "Performance indicators"
+      }
+    },
+    "production": {
+      "title": "Production Systems",
+      "description": "Implementation of production management systems based on:",
+      "topics": {
+        "1": "TPM Methodology",
+        "2": "5S Program",
+        "3": "Autonomous maintenance",
+        "4": "Visual management",
+        "5": "Continuous improvement"
+      }
+    }
+  },
+  "about": {
+    "background": {
+      "alt": "About Background"
+    },
+    "hero": {
+      "title": "About Us",
+      "description": "Three decades of experience in industrial commissioning, transforming knowledge into operational excellence."
+    },
+    "cards": {
+      "history": {
+        "title": "Our History",
+        "content": "With over 30 years of experience in industrial commissioning, our journey began at Braskem, where we developed unique expertise in complex petrochemical plant projects. This experience allowed us to create efficient and innovative methodologies for industrial commissioning."
+      },
+      "team": {
+        "title": "Our Team",
+        "content": "We have highly qualified and experienced professionals with decades of experience in industrial commissioning. Our team combines deep technical knowledge with practical skills, ensuring excellence in every project."
+      },
+      "mission": {
+        "title": "Our Mission",
+        "content": "To deliver excellence in industrial commissioning, ensuring safe and efficient plant startup. We constantly seek to innovate in our methodologies and tools, always focusing on total customer satisfaction."
+      },
+      "values": {
+        "title": "Our Values",
+        "content": "Commitment to safety, technical excellence, constant innovation, and customer satisfaction are the pillars that guide our operations. We believe that our clients' success is our own success."
+      }
+    },
+    "experience": {
+      "title": "Our Experience",
+      "description": "Our trajectory at Braskem has given us a unique perspective on industrial commissioning. We participated in crucial projects such as the P2 and P3 Pilot Plants, as well as the PP3 greenfield project in Paulínia, developing innovative and efficient methodologies for industrial commissioning."
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We are ready to assist you",
+    "background": {
+      "alt": "Contact Background Image"
+    },
+    "form": {
+      "title": "Send us a Message",
+      "name": {
+        "label": "Name",
+        "placeholder": "Your full name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "your@email.com"
+      },
+      "phone": {
+        "label": "Phone",
+        "placeholder": "(00) 00000-0000"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Type your message..."
+      },
+      "submit": "Send Message"
+    },
+    "address": {
+      "title": "Address",
+      "line1": "Paulista Ave, 1106 - Room 1 - 16th floor",
+      "line2": "Bela Vista District",
+      "line3": "São Paulo - SP"
+    },
+    "phone": {
+      "title": "Phone Numbers"
+    },
+    "email": {
+      "title": "Email"
+    },
+    "hours": {
+      "title": "Business Hours",
+      "schedule": "Monday to Friday: 9AM to 6PM"
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "subtitle": "How we protect your data",
+    "background": {
+      "alt": "Privacy Background Image"
+    },
+    "intro": {
+      "title": "1. Introduction",
+      "content": "ComissionaPro is committed to protecting the privacy and personal data of its users and customers. This policy describes how we collect, use, and protect your information."
+    },
+    "dataCollection": {
+      "title": "2. Data Collection",
+      "content": "We only collect information necessary for providing our services, including:",
+      "list": {
+        "1": "Basic identification data",
+        "2": "Contact information",
+        "3": "Data related to contracted services",
+        "4": "Platform interaction records"
+      }
+    },
+    "dataUsage": {
+      "title": "3. Use of Information",
+      "content": "The collected information is used exclusively for:",
+      "list": {
+        "1": "Provision of contracted services",
+        "2": "Customer communication",
+        "3": "Service improvements",
+        "4": "Compliance with legal obligations"
+      }
+    },
+    "dataProtection": {
+      "title": "4. Data Protection",
+      "content": "We implement appropriate technical and organizational measures to protect your data against unauthorized access, alteration, disclosure, or destruction."
+    },
+    "rights": {
+      "title": "5. Your Rights",
+      "content": "You have the right to:",
+      "list": {
+        "1": "Access your personal data",
+        "2": "Request corrections of incorrect data",
+        "3": "Request deletion of your data",
+        "4": "Revoke consent for data use"
+      }
+    },
+    "contact": {
+      "title": "6. Contact",
+      "content": "For matters related to your data privacy, please contact us at: contato@castroconsultoria.com"
+    }
+  },
+  "projects": {
+    "title": "Our Projects",
+    "subtitle": "Discover some of our success cases",
+    "background": {
+      "alt": "Projects Background Image"
+    },
+    "projectTitles": {
+      "pms": "PMS - Paulínia (Training) - Triunfo (Internship)",
+      "pp3": "PP3 Paulínia - Braskem",
+      "p4": "Pilot Plant P4 - Braskem",
+      "p3": "Pilot Plant P3 - Braskem",
+      "p2": "Pilot Plant P2 - Braskem"
+    },
+    "sections": {
+      "scope": "Scope",
+      "challenges": "Main Challenges",
+      "results": "Results"
+    },
+    "types": {
+      "training": "Training",
+      "greenfield": "Greenfield",
+      "pilot": "Pilot Plant"
+    },
+    "scope": {
+      "processSafety": "Process safety",
+      "automation": "Automation",
+      "electrical": "Electrical",
+      "instrumentation": "Instrumentation",
+      "laboratory": "Laboratory",
+      "products": "Products and Applications",
+      "equipment": "Industrial Equipment",
+      "assembly": "Assembly",
+      "precommissioning": "Pre-commissioning",
+      "commissioning": "Commissioning",
+      "startup": "Startup"
+    },
+    "challenges": {
+      "hours480": "480 hours workload",
+      "weekly8h": "8h/day weekly schedule",
+      "onsite4months": "4-month on-site internship at operating plant",
+      "firstGreenfield": "Braskem's first greenfield project",
+      "deadline22months": "Challenging 22-month deadline",
+      "newUnitComplexity": "New unit complexity",
+      "p2UnivationChange": "P2 Univation plant modification",
+      "existingSystemsAdaptation": "Existing systems adaptation",
+      "p1Conversion": "P1 Spheripol to Spherilene technology conversion",
+      "swingPlant": "Swing plant transformation",
+      "systemsAdaptation": "Systems adaptation",
+      "firstSkid": "First plant received in compact skid",
+      "utilitiesIntegration": "Integration with operating units utilities",
+      "zeroIncidents": "Zero incidents during execution"
+    },
+    "results": {
+      "knowledge": "Deep technology knowledge transfer",
+      "safety": "Creation of task-linked safety culture",
+      "team": "Strong team support throughout the project",
+      "onTime": "On-time startup",
+      "successfulImplementation": "Successful implementation",
+      "companyMilestone": "Company history milestone",
+      "productionFlexibility": "Production flexibility",
+      "resourceOptimization": "Resource optimization",
+      "operationalSwing": "Operational swing plant",
+      "twoTechFlexibility": "Two-technology flexibility",
+      "existingOptimization": "Existing resources optimization",
+      "successfulStartup": "Successful startup",
+      "safeIntegration": "Safe integration with existing units",
+      "pioneerUnivation": "Pioneer Univation technology implementation"
+    },
+    "tags": {
+      "petrochemical": "Petrochemical",
+      "spheripol": "Spheripol",
+      "training": "Training",
+      "safety": "Safety",
+      "polypropylene": "Polypropylene",
+      "greenfield": "Greenfield",
+      "polyethylene": "Polyethylene",
+      "univation": "Univation",
+      "spherilene": "Spherilene",
+      "swingPlant": "Swing Plant",
+      "skid": "Skid"
+    }
+  },
+  "terms": {
+    "title": "Terms of Use",
+    "subtitle": "General conditions for using our services",
+    "background": {
+      "alt": "Terms Background Image"
+    },
+    "acceptance": {
+      "title": "1. Terms Acceptance",
+      "content": "By accessing and using ComissionaPro services, you agree to these terms and conditions. If you disagree with any part of these terms, we recommend not using our services.",
+      "list": {
+        "read": "Read all terms carefully",
+        "implies": "Use of services implies acceptance",
+        "updates": "Updates may occur periodically"
+      }
+    },
+    "usage": {
+      "title": "2. Service Usage",
+      "content": "ComissionaPro services must be used in accordance with applicable laws and these guidelines:",
+      "list": {
+        "truthful": "Provide truthful and accurate information",
+        "confidentiality": "Maintain credentials confidentiality",
+        "lawful": "Do not use services for unlawful purposes",
+        "respect": "Respect intellectual property rights"
+      }
+    },
+    "intellectual": {
+      "title": "3. Intellectual Property",
+      "content": "All content available in our services is protected by copyright and other intellectual property laws.",
+      "list": {
+        "brands": "Brands, logos and trade names",
+        "documents": "Technical documents and methodologies",
+        "software": "Developed software and tools",
+        "content": "Website visual and textual content"
+      }
+    },
+    "responsibilities": {
+      "title": "4. Responsibilities",
+      "content": "ComissionaPro commits to:",
+      "list": {
+        "quality": "Provide services with quality and professionalism",
+        "confidentiality": "Maintain information confidentiality",
+        "practices": "Follow market best practices",
+        "deadlines": "Meet established deadlines and agreements"
+      }
+    },
+    "limitation": {
+      "title": "5. Liability Limitation",
+      "content": "ComissionaPro is not responsible for:",
+      "list": {
+        "misuse": "Misuse of services by the client",
+        "technical": "Technical issues beyond our control",
+        "indirect": "Indirect losses or damages",
+        "incorrect": "Incorrect information provided by the client"
+      }
+    },
+    "modifications": {
+      "title": "6. Terms Modifications",
+      "content": "We reserve the right to modify these terms at any time. Significant changes will be communicated to users through our official channels.",
+      "list": {
+        "notification": "Prior notification of changes",
+        "right": "Right to accept or refuse new terms",
+        "immediate": "Immediate effect after publication"
+      }
+    }
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "contact": "Contact",
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "rights": "All rights reserved."
+  },
+  "routes": {
+    "projects": "/projects",
+    "contact": "/contact"
+  }
+}

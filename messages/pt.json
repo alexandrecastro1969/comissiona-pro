@@ -1,0 +1,434 @@
+{
+  "home": {
+    "background": {
+      "alt": "Indústria Petroquímica"
+    },
+    "hero": {
+      "title": "Comissionamento Industrial",
+      "subtitle": "Excelência e Inovação",
+      "description": "Soluções especializadas para partida segura e eficiente de plantas industriais"
+    },
+    "highlights": {
+      "experience": "Anos de Experiência",
+      "projects": "Grandes Projetos Realizados",
+      "clients": "Taxa de Satisfação dos Clientes"
+    },
+    "cards": {
+      "title": "Nossas Soluções",
+      "items": {
+        "commissioning": {
+          "title": "Comissionamento Industrial",
+          "description": "Gestão completa da partida de plantas industriais"
+        },
+        "software": {
+          "title": "Soluções Digitais",
+          "description": "Software especializado para gestão de comissionamento"
+        },
+        "consulting": {
+          "title": "Consultoria Técnica",
+          "description": "Assessoria especializada para projetos industriais"
+        }
+      },
+      "projects": {
+        "title": "Nossos Projetos",
+        "description": "Conheça nossos projetos bem-sucedidos de comissionamento industrial",
+        "button": "Ver Projetos"
+      },
+      "contact": {
+        "title": "Entre em Contato",
+        "description": "Fale conosco para discutir as necessidades do seu projeto",
+        "button": "Contato"
+      }
+    },
+    "footer": {
+      "copyright": "© 2024 Comissiona Pro. Todos os direitos reservados.",
+      "terms": "Termos de Uso",
+      "privacy": "Política de Privacidade"
+    }
+  },
+  "services": {
+    "meta": {
+      "title": "Serviços | Comissiona Pro",
+      "description": "Soluções completas em comissionamento industrial, combinando experiência técnica com inovação digital"
+    },
+    "hero": {
+      "title": "Nossos Serviços",
+      "description": "Soluções completas em comissionamento industrial, combinando experiência técnica com inovação digital"
+    },
+    "background": {
+      "alt": "Fundo Serviços"
+    },
+    "commissioning": {
+      "title": "Comissionamento Industrial",
+      "description": "Serviços especializados de comissionamento para garantir a operação segura e eficiente de sistemas industriais. Nossa metodologia abrange todas as fases do projeto:",
+      "topics": {
+        "1": "Planejamento e estratégia de comissionamento",
+        "2": "Desenvolvimento de procedimentos específicos",
+        "3": "Supervisão e execução de atividades",
+        "4": "Documentação e relatórios detalhados",
+        "5": "Gestão de interfaces entre disciplinas"
+      }
+    },
+    "software": {
+      "title": "Software para Gestão do Comissionamento",
+      "description": "Soluções digitais especializadas para gerenciar todo o ciclo de comissionamento, oferecendo:",
+      "topics": {
+        "1": "Controle total de atividades em tempo real",
+        "2": "Gestão de documentação técnica",
+        "3": "Acompanhamento de progresso e KPIs",
+        "4": "Rastreabilidade de pendências",
+        "5": "Relatórios automatizados"
+      }
+    },
+    "consulting": {
+      "title": "Consultoria Técnica",
+      "description": "Consultoria especializada para projetos industriais, compartilhando conhecimento e melhores práticas em:",
+      "topics": {
+        "1": "Análise e otimização de processos",
+        "2": "Desenvolvimento de procedimentos",
+        "3": "Avaliação de riscos e segurança",
+        "4": "Suporte técnico especializado",
+        "5": "Recomendações de melhoria"
+      }
+    },
+    "training": {
+      "title": "Treinamento",
+      "description": "Programas de treinamento personalizados para equipes de operação e manutenção, incluindo:",
+      "topics": {
+        "1": "Fundamentos de comissionamento",
+        "2": "Práticas de segurança industrial",
+        "3": "Operação de sistemas específicos",
+        "4": "Gestão de documentação técnica",
+        "5": "Uso de ferramentas digitais"
+      }
+    },
+    "shutdown": {
+      "title": "Planejamento de Paradas",
+      "description": "Gestão completa de paradas de manutenção industrial, garantindo:",
+      "topics": {
+        "1": "Planejamento detalhado de parada",
+        "2": "Coordenação de liberação de planta",
+        "3": "Gestão de retorno às operações",
+        "4": "Otimização de cronogramas",
+        "5": "Minimização de tempo de parada"
+      }
+    },
+    "hazop": {
+      "title": "Análise de Risco (HAZOP)",
+      "description": "Experiência em identificação e avaliação de riscos de processo, incluindo:",
+      "topics": {
+        "1": "Condução de estudos HAZOP",
+        "2": "Identificação de desvios de processo",
+        "3": "Avaliação de consequências",
+        "4": "Recomendações de segurança",
+        "5": "Documentação técnica especializada"
+      }
+    },
+    "optimization": {
+      "title": "Otimização de Processos",
+      "description": "Implementação de metodologias de melhoria contínua:",
+      "topics": {
+        "1": "Aplicação de Six Sigma",
+        "2": "Implementação Lean Manufacturing",
+        "3": "Redução de desperdícios",
+        "4": "Melhoria de eficiência",
+        "5": "Indicadores de desempenho"
+      }
+    },
+    "production": {
+      "title": "Sistemas de Produção",
+      "description": "Implementação de sistemas de gestão da produção baseados em:",
+      "topics": {
+        "1": "Metodologia TPM",
+        "2": "Programa 5S",
+        "3": "Manutenção autônoma",
+        "4": "Gestão visual",
+        "5": "Melhoria contínua"
+      }
+    }
+  },
+  "about": {
+    "background": {
+      "alt": "Fundo Sobre"
+    },
+    "hero": {
+      "title": "Sobre Nós",
+      "description": "Três décadas de experiência em comissionamento industrial, transformando conhecimento em excelência operacional."
+    },
+    "cards": {
+      "history": {
+        "title": "Nossa História",
+        "content": "Com mais de 30 anos de experiência em comissionamento industrial, nossa jornada começou na Braskem, onde desenvolvemos expertise única em projetos complexos de plantas petroquímicas. Esta experiência nos permitiu criar metodologias eficientes e inovadoras para o comissionamento de plantas industriais."
+      },
+      "team": {
+        "title": "Nossa Equipe",
+        "content": "Contamos com profissionais altamente qualificados e experientes, com décadas de atuação em comissionamento industrial. Nossa equipe combina conhecimento técnico profundo com habilidades práticas, garantindo excelência em cada projeto."
+      },
+      "mission": {
+        "title": "Nossa Missão",
+        "content": "Entregar excelência em comissionamento industrial, garantindo a partida segura e eficiente de plantas industriais. Buscamos constantemente inovar em nossas metodologias e ferramentas, sempre focando na satisfação total de nossos clientes."
+      },
+      "values": {
+        "title": "Nossos Valores",
+        "content": "Comprometimento com a segurança, excelência técnica, inovação constante e satisfação do cliente são os pilares que norteiam nossa atuação. Acreditamos que o sucesso de nossos clientes é nosso próprio sucesso."
+      }
+    },
+    "experience": {
+      "title": "Nossa Experiência",
+      "description": "Nossa trajetória na Braskem nos proporcionou uma perspectiva única no comissionamento de plantas industriais. Participamos de projetos cruciais como as Plantas Piloto P2 e P3, além do projeto greenfield PP3 em Paulínia, desenvolvendo metodologias inovadoras e eficientes para o comissionamento industrial."
+    }
+  },
+  "contact": {
+    "title": "Entre em Contato",
+    "subtitle": "Estamos prontos para atender você",
+    "background": {
+      "alt": "Imagem de Fundo Contato"
+    },
+    "form": {
+      "title": "Envie sua Mensagem",
+      "name": {
+        "label": "Nome",
+        "placeholder": "Seu nome completo"
+      },
+      "email": {
+        "label": "E-mail",
+        "placeholder": "seu@email.com"
+      },
+      "phone": {
+        "label": "Telefone",
+        "placeholder": "(00) 00000-0000"
+      },
+      "message": {
+        "label": "Mensagem",
+        "placeholder": "Digite sua mensagem..."
+      },
+      "submit": "Enviar Mensagem"
+    },
+    "address": {
+      "title": "Endereço",
+      "line1": "Av. Paulista, 1106 - Sala 1 - 16° andar",
+      "line2": "Bairro Bela Vista",
+      "line3": "São Paulo - SP"
+    },
+    "phone": {
+      "title": "Telefones"
+    },
+    "email": {
+      "title": "E-mail"
+    },
+    "hours": {
+      "title": "Horário de Atendimento",
+      "schedule": "Segunda a Sexta: 9h às 18h"
+    }
+  },
+  "privacy": {
+    "title": "Política de Privacidade",
+    "subtitle": "Como protegemos seus dados",
+    "background": {
+      "alt": "Imagem de Fundo Privacidade"
+    },
+    "intro": {
+      "title": "1. Introdução",
+      "content": "A ComissionaPro está comprometida em proteger a privacidade e os dados pessoais de seus usuários e clientes. Esta política descreve como coletamos, usamos e protegemos suas informações."
+    },
+    "dataCollection": {
+      "title": "2. Coleta de Dados",
+      "content": "Coletamos apenas as informações necessárias para a prestação de nossos serviços, incluindo:",
+      "list": {
+        "1": "Dados de identificação básica",
+        "2": "Informações de contato",
+        "3": "Dados relacionados aos serviços contratados",
+        "4": "Registros de interações com nossa plataforma"
+      }
+    },
+    "dataUsage": {
+      "title": "3. Uso das Informações",
+      "content": "As informações coletadas são utilizadas exclusivamente para:",
+      "list": {
+        "1": "Prestação dos serviços contratados",
+        "2": "Comunicação com clientes",
+        "3": "Melhorias em nossos serviços",
+        "4": "Cumprimento de obrigações legais"
+      }
+    },
+    "dataProtection": {
+      "title": "4. Proteção de Dados",
+      "content": "Implementamos medidas técnicas e organizacionais apropriadas para proteger seus dados contra acesso não autorizado, alteração, divulgação ou destruição não autorizada."
+    },
+    "rights": {
+      "title": "5. Seus Direitos",
+      "content": "Você tem direito a:",
+      "list": {
+        "1": "Acessar seus dados pessoais",
+        "2": "Solicitar correções de dados incorretos",
+        "3": "Solicitar a exclusão de seus dados",
+        "4": "Revogar consentimento para uso dos dados"
+      }
+    },
+    "contact": {
+      "title": "6. Contato",
+      "content": "Para questões relacionadas à privacidade de seus dados, entre em contato através do email: contato@castroconsultoria.com"
+    }
+  },
+  "projects": {
+    "title": "Nossos Projetos",
+    "subtitle": "Conheça alguns dos nossos casos de sucesso",
+    "background": {
+      "alt": "Imagem de Fundo Projetos"
+    },
+    "projectTitles": {
+      "pms": "PMS - Paulínia (Treinamento) - Triunfo (Estágio)",
+      "pp3": "PP3 Paulínia - Braskem",
+      "p4": "Planta Piloto P4 - Braskem",
+      "p3": "Planta Piloto P3 - Braskem",
+      "p2": "Planta Piloto P2 - Braskem"
+    },
+    "sections": {
+      "scope": "Escopo",
+      "challenges": "Principais Desafios",
+      "results": "Resultados"
+    },
+    "types": {
+      "training": "Treinamento",
+      "greenfield": "Greenfield",
+      "pilot": "Planta Piloto"
+    },
+    "scope": {
+      "processSafety": "Segurança do processo",
+      "automation": "Automação",
+      "electrical": "Elétrica",
+      "instrumentation": "Instrumentação",
+      "laboratory": "Laboratório",
+      "products": "Produtos e Aplicações",
+      "equipment": "Equipamentos Industriais",
+      "assembly": "Montagem",
+      "precommissioning": "Pré-comissionamento",
+      "commissioning": "Comissionamento",
+      "startup": "Partida"
+    },
+    "challenges": {
+      "hours480": "Carga horária de 480h",
+      "weekly8h": "Carga semanal de 8h/dia",
+      "onsite4months": "Estágio on site de 4 meses em planta em operação",
+      "firstGreenfield": "Primeiro projeto greenfield da Braskem",
+      "deadline22months": "Prazo desafiador de 22 meses",
+      "newUnitComplexity": "Complexidade de nova unidade",
+      "p2UnivationChange": "Alteração da planta P2 Univation",
+      "existingSystemsAdaptation": "Adaptação de sistemas existentes",
+      "p1Conversion": "Conversão de planta P1 Spheripol para tecnologia Spherilene",
+      "swingPlant": "Transformação em planta swing",
+      "systemsAdaptation": "Adaptação de sistemas existentes",
+      "firstSkid": "Primeira planta recebida em skid compacto",
+      "utilitiesIntegration": "Interligações com utilidades de unidades em operação",
+      "zeroIncidents": "Zero incidentes durante execução"
+    },
+    "results": {
+      "knowledge": "Transferência de conhecimento profundo sobre a tecnologia",
+      "safety": "Criação de uma cultura de segurança ligada a cada tarefa",
+      "team": "Grande apoio da equipe formada durante todo o projeto",
+      "onTime": "Partida dentro do prazo",
+      "successfulImplementation": "Implementação bem-sucedida",
+      "companyMilestone": "Marco na história da empresa",
+      "productionFlexibility": "Flexibilidade para produção",
+      "resourceOptimization": "Otimização de recursos existentes",
+      "operationalSwing": "Planta swing operacional",
+      "twoTechFlexibility": "Flexibilidade para duas tecnologias",
+      "existingOptimization": "Otimização de recursos existentes",
+      "successfulStartup": "Partida bem-sucedida",
+      "safeIntegration": "Integração segura com unidades existentes",
+      "pioneerUnivation": "Implementação pioneira de tecnologia Univation"
+    },
+    "tags": {
+      "petrochemical": "Petroquímica",
+      "spheripol": "Spheripol",
+      "training": "Treinamento",
+      "safety": "Segurança",
+      "polypropylene": "Polipropileno",
+      "greenfield": "Greenfield",
+      "polyethylene": "Polietileno",
+      "univation": "Univation",
+      "spherilene": "Spherilene",
+      "swingPlant": "Planta Swing",
+      "skid": "Skid"
+    }
+  },
+  "terms": {
+    "title": "Termos de Uso",
+    "subtitle": "Condições gerais para uso de nossos serviços",
+    "background": {
+      "alt": "Imagem de Fundo Termos"
+    },
+    "acceptance": {
+      "title": "1. Aceitação dos Termos",
+      "content": "Ao acessar e utilizar os serviços da ComissionaPro, você concorda com estes termos e condições. Se você não concordar com alguma parte destes termos, recomendamos que não utilize nossos serviços.",
+      "list": {
+        "read": "Leia atentamente todos os termos",
+        "implies": "A utilização dos serviços implica em aceitação",
+        "updates": "Atualizações podem ocorrer periodicamente"
+      }
+    },
+    "usage": {
+      "title": "2. Uso do Serviço",
+      "content": "Os serviços da ComissionaPro devem ser utilizados de acordo com as leis aplicáveis e estas diretrizes:",
+      "list": {
+        "truthful": "Fornecer informações verdadeiras e precisas",
+        "confidentiality": "Manter a confidencialidade de suas credenciais",
+        "lawful": "Não utilizar os serviços para fins ilícitos",
+        "respect": "Respeitar os direitos de propriedade intelectual"
+      }
+    },
+    "intellectual": {
+      "title": "3. Propriedade Intelectual",
+      "content": "Todo o conteúdo disponibilizado em nossos serviços está protegido por direitos autorais e outras leis de propriedade intelectual.",
+      "list": {
+        "brands": "Marcas, logos e nomes comerciais",
+        "documents": "Documentos técnicos e metodologias",
+        "software": "Software e ferramentas desenvolvidas",
+        "content": "Conteúdo visual e textual do site"
+      }
+    },
+    "responsibilities": {
+      "title": "4. Responsabilidades",
+      "content": "A ComissionaPro se compromete a:",
+      "list": {
+        "quality": "Prestar serviços com qualidade e profissionalismo",
+        "confidentiality": "Manter a confidencialidade das informações",
+        "practices": "Seguir as melhores práticas do mercado",
+        "deadlines": "Cumprir prazos e acordos estabelecidos"
+      }
+    },
+    "limitation": {
+      "title": "5. Limitação de Responsabilidade",
+      "content": "A ComissionaPro não se responsabiliza por:",
+      "list": {
+        "misuse": "Uso indevido dos serviços pelo cliente",
+        "technical": "Problemas técnicos fora de nosso controle",
+        "indirect": "Perdas ou danos indiretos",
+        "incorrect": "Informações incorretas fornecidas pelo cliente"
+      }
+    },
+    "modifications": {
+      "title": "6. Modificações dos Termos",
+      "content": "Reservamos o direito de modificar estes termos a qualquer momento. Alterações significativas serão comunicadas aos usuários através de nossos canais oficiais.",
+      "list": {
+        "notification": "Notificação prévia de alterações",
+        "right": "Direito de aceitar ou recusar novos termos",
+        "immediate": "Vigência imediata após publicação"
+      }
+    }
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "Sobre",
+    "services": "Serviços",
+    "projects": "Projetos",
+    "contact": "Contato",
+    "terms": "Termos",
+    "privacy": "Privacidade",
+    "rights": "Todos os direitos reservados."
+  },
+  "routes": {
+    "projects": "/projetos",
+    "contact": "/contato"
+  }
+}

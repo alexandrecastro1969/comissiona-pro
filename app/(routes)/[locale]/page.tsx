@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import Link from 'next/link'
 import Hero from '@/components/home/Hero'
+import { useTranslations } from 'next-intl'
 
 // Componentes carregados dinamicamente
 const Highlights = dynamic(() => import('@/components/home/Highlights'), {
@@ -13,17 +14,23 @@ const ServiceCards = dynamic(() => import('@/components/home/ServiceCards'), {
   loading: () => <div className="h-[400px] animate-pulse bg-gray-200/20 rounded-lg" />
 })
 
-// Blur hash da imagem de fundo (gere usando uma ferramenta online)
 const blurDataURL = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQrJiEwST4oLTU5MTU4N0Y+QUZENjM6OUNGRVFRVl9aXWVmbmdpRlFRZWf/2wBDAR..."
 
+export const metadata = {
+  title: 'Comissiona Pro | Excelência em Comissionamento Industrial',
+  description: 'Soluções especializadas para comissionamento seguro e eficiente de plantas industriais',
+}
+
 export default function Home() {
+  const t = useTranslations('home');
+
   return (
     <div className="relative min-h-screen">
       {/* Background Image */}
       <div className="fixed inset-0 z-0">
         <Image
           src="/images/petroquimica.webp"
-          alt="Indústria Petroquímica"
+          alt={t('background.alt')}
           fill
           className="object-cover"
           priority
@@ -48,24 +55,6 @@ export default function Home() {
             <ServiceCards />
           </Suspense>
         </main>
-
-        <footer className="relative z-10 py-4">
-          <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row justify-between items-center text-white/80 text-sm">
-              <div className="mb-4 md:mb-0">
-                © 2024 Comissiona Pro. Todos os direitos reservados.
-              </div>
-              <div className="flex gap-4">
-                <Link href="/termos" className="hover:text-white">
-                  Termos de Uso
-                </Link>
-                <Link href="/privacidade" className="hover:text-white">
-                  Política de Privacidade
-                </Link>
-              </div>
-            </div>
-          </div>
-        </footer>
       </div>
     </div>
   )
