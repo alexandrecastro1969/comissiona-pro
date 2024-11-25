@@ -1,13 +1,9 @@
-"use client"; // Adicione esta linha no topo do arquivo
-
-import { useState } from 'react'; // Importando useState
 import { getTranslations } from 'next-intl/server'
 import { NavLink } from './nav-link'
 import { LanguageLinks } from './language-links'
 
 export async function Navbar() {
   const t = await getTranslations('navigation')
-  const [isOpen, setIsOpen] = useState(false); // Estado para controlar o menu
 
   const navItems = [
     { href: "/" as const, label: t('home') },
@@ -25,10 +21,7 @@ export async function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/60 backdrop-blur-sm shadow-sm z-40">
       <div className="max-w-screen-xl mx-auto px-4 py-3 flex justify-between items-center">
-        <button onClick={() => setIsOpen(!isOpen)} className="md:hidden">
-          Menu
-        </button>
-        <ul className={`hidden md:flex space-x-8`}>
+        <ul className="flex space-x-8">
           {navItems.map((item) => (
             <li key={item.href}>
               <NavLink href={item.href} label={item.label} />
@@ -36,7 +29,7 @@ export async function Navbar() {
           ))}
         </ul>
         <div className="flex items-center space-x-6">
-          <ul className={`hidden md:flex space-x-6`}>
+          <ul className="flex space-x-6">
             {legalItems.map((item) => (
               <li key={item.href}>
                 <NavLink href={item.href} label={item.label} />
@@ -45,21 +38,6 @@ export async function Navbar() {
           </ul>
           <LanguageLinks />
         </div>
-      </div>
-      {/* Menu Mobile */}
-      <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>
-        <ul className="flex flex-col space-y-2">
-          {navItems.map((item) => (
-            <li key={item.href}>
-              <NavLink href={item.href} label={item.label} />
-            </li>
-          ))}
-          {legalItems.map((item) => (
-            <li key={item.href}>
-              <NavLink href={item.href} label={item.label} />
-            </li>
-          ))}
-        </ul>
       </div>
     </nav>
   )
