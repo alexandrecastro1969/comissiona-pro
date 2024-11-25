@@ -2,7 +2,8 @@
 
 import { NavLink } from './nav-link'
 import { LanguageLinks } from './language-links'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 
 type NavbarContentProps = {
   navItems: Array<{
@@ -17,6 +18,12 @@ type NavbarContentProps = {
 
 export function NavbarContent({ navItems, legalItems }: NavbarContentProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const pathname = usePathname()
+
+  // Fecha o menu quando a rota muda
+  useEffect(() => {
+    setIsMenuOpen(false)
+  }, [pathname])
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/60 backdrop-blur-sm shadow-sm z-40">
