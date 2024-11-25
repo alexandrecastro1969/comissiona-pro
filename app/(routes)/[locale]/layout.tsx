@@ -21,13 +21,17 @@ export default async function LocaleLayout({
   }
 
   return (
-    <NextIntlClientProvider messages={messages} locale={locale}>
-      <div className="min-h-screen flex flex-col">
-        <Navbar />
-        <main className="flex-grow">
-          {children}
-        </main>
-      </div>
-    </NextIntlClientProvider>
+    <html lang={locale}>
+      <body className={inter.className}>
+        <NextIntlClientProvider messages={messages} locale={locale}>
+          <div className="min-h-screen flex flex-col">
+            <Navbar />
+            <main className="flex-grow">
+              {children}
+            </main>
+          </div>
+        </NextIntlClientProvider>
+      </body>
+    </html>
   )
 }
