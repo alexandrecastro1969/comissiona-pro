@@ -9,7 +9,7 @@ export async function Navbar() {
     { href: "/" as const, label: t('home') },
     { href: "/sobre" as const, label: t('about') },
     { href: "/servicos" as const, label: t('services') },
-    { href: "/projetos" as const, label: t('projects') },
+    { href: "/projects" as const, label: t('projects') },
     { href: "/contato" as const, label: t('contact') }
   ]
 
