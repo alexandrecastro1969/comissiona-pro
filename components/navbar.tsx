@@ -1,7 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import { NavLink } from './nav-link';
 import { LanguageLinks } from './language-links';
-import { useState } from 'react';
 
 export async function Navbar() {
   const t = await getTranslations('navigation');
@@ -19,18 +18,31 @@ export async function Navbar() {
     { href: "/privacidade" as const, label: t('privacy') }
   ];
 
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/60 backdrop-blur-sm shadow-sm z-40">
       <div className="max-w-screen-xl mx-auto px-4 py-3 flex justify-between items-center">
-        <button onClick={() => setIsOpen(!isOpen)} className="md:hidden">
+        <button
+          onClick={() => {
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu) {
+              mobileMenu.classList.toggle('hidden');
+            }
+          }}
+          className="md:hidden"
+        >
           {/* Ícone do menu hamburger */}
           <span className="material-icons">menu</span>
         </button>
-        <ul className={`flex space-x-8 ${isOpen ? 'block' : 'hidden'} md:flex`}>
+        <ul id="mobile-menu" className="hidden md:flex space-x-8">
           {navItems.map((item) => (
             <li key={item.href}>
+              <NavLink href={item.href} label={item.label} />
+            </li>
+          ))}
+        </ul>
+        <ul className="absolute top-16 left-0 right-0 hidden bg-white shadow-md md:hidden" id="mobile-menu">
+          {navItems.map((item) => (
+            <li key={item.href} className="px-4 py-2">
               <NavLink href={item.href} label={item.label} />
             </li>
           ))}
