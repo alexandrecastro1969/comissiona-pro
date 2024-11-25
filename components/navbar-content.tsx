@@ -22,9 +22,33 @@ export function NavbarContent({ navItems, legalItems }: NavbarContentProps) {
     <nav className="fixed top-0 left-0 right-0 bg-white/60 backdrop-blur-sm shadow-sm z-40">
       <div className="max-w-screen-xl mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
-          <div className="flex items-center">
-            <span className="text-xl font-semibold">Logo</span>
-          </div>
+        <div className="flex items-center">
+  <svg 
+    width="40" 
+    height="40" 
+    viewBox="0 0 40 40" 
+    className="text-blue-600"
+  >
+    <path 
+      d="M20 5L35 30H5L20 5Z" 
+      fill="currentColor"
+      stroke="currentColor"
+      strokeWidth="2"
+    />
+    <circle 
+      cx="20" 
+      cy="20" 
+      r="8" 
+      fill="white"
+      stroke="currentColor"
+      strokeWidth="2"
+    />
+  </svg>
+  <div className="ml-2">
+    <span className="text-xl font-bold text-gray-800">Comissiona</span>
+    <span className="text-xl font-bold text-blue-600">Pro</span>
+  </div>
+</div>
           
           <button 
             className="lg:hidden p-2 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
