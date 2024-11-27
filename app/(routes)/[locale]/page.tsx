@@ -58,7 +58,7 @@ export default function Home() {
           {/* Chat Interface */}
           <div className="mt-16">
             <h2 className="text-2xl font-bold text-center mb-8 text-white">
-              Chat com IA
+              ComissionaPro chat
             </h2>
             <ChatInterface />
           </div>

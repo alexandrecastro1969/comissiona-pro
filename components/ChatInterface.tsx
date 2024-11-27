@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, KeyboardEvent, useEffect } from 'react';
+import { useState, KeyboardEvent, useEffect, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
+// @ts-ignore
 import remarkGfm from 'remark-gfm';
 
 // Definindo os tipos
@@ -15,6 +16,17 @@ export default function ChatInterface() {
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState<Message[]>([]);
     const [isLoading, setIsLoading] = useState(false);
+    const messagesEndRef = useRef<HTMLDivElement>(null);
+
+    // Função para rolar para a última mensagem
+    const scrollToBottom = () => {
+        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    };
+
+    // Rolar quando novas mensagens são adicionadas
+    useEffect(() => {
+        scrollToBottom();
+    }, [messages]);
 
     // Carregar mensagens do localStorage ao iniciar
     useEffect(() => {
@@ -139,7 +151,7 @@ export default function ChatInterface() {
                                                 </code>
                                             );
                                         },
-                                        a: ({node, href, children}) => (
+                                        a: ({href, children}) => (
                                             <a 
                                                 href={href}
                                                 className="text-blue-600 hover:underline" 
@@ -167,6 +179,8 @@ export default function ChatInterface() {
                         <div className="animate-bounce delay-200">●</div>
                     </div>
                 )}
+                {/* Div de referência para auto-scroll */}
+                <div ref={messagesEndRef} />
             </div>
 
             <form onSubmit={(e) => {
