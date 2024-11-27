@@ -4,9 +4,7 @@ const withNextIntl = require('next-intl/plugin')('./i18n/request.ts');
 const nextConfig = {
   // Configurações de cache
   onDemandEntries: {
-    // Período que a página deve permanecer em buffer
     maxInactiveAge: 25 * 1000,
-    // Número de páginas que devem ser mantidas em buffer
     pagesBufferLength: 4,
   },
 
@@ -20,6 +18,8 @@ const nextConfig = {
     minimumCacheTTL: 60,
     deviceSizes: [640, 750, 828, 1080, 1200],
     imageSizes: [16, 32, 48, 64, 96],
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
 
   // Configurações de segurança
@@ -30,7 +30,13 @@ const nextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://vercel.live; style-src 'self' 'unsafe-inline';"
+            value: [
+              "default-src 'self'",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://vercel.live",
+              "style-src 'self' 'unsafe-inline'",
+              "img-src 'self' data: blob: https:",
+              "font-src 'self'"
+            ].join('; ')
           }
         ]
       }
