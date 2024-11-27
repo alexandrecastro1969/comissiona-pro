@@ -18,9 +18,13 @@ export default function ChatInterface() {
     const [isLoading, setIsLoading] = useState(false);
     const messagesEndRef = useRef<HTMLDivElement>(null);
 
-    // Função para rolar para a última mensagem
+    // Função de scroll melhorada
     const scrollToBottom = () => {
-        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+        messagesEndRef.current?.scrollIntoView({ 
+            behavior: "smooth", 
+            block: "end",
+            inline: "nearest"
+        });
     };
 
     // Rolar quando novas mensagens são adicionadas
@@ -98,8 +102,11 @@ export default function ChatInterface() {
 
     return (
         <div className="max-w-2xl mx-auto p-4">
-            {/* Histórico de mensagens */}
-            <div className="mb-4 space-y-4 max-h-[500px] overflow-y-auto">
+            {/* Histórico de mensagens com scroll suave */}
+            <div 
+                className="mb-4 space-y-4 max-h-[500px] overflow-y-auto scroll-smooth"
+                style={{ scrollBehavior: 'smooth' }}
+            >
                 {messages.map((msg) => (
                     <div
                         key={msg.timestamp}
@@ -179,8 +186,8 @@ export default function ChatInterface() {
                         <div className="animate-bounce delay-200">●</div>
                     </div>
                 )}
-                {/* Div de referência para auto-scroll */}
-                <div ref={messagesEndRef} />
+                {/* Div de referência com altura extra para melhor espaçamento */}
+                <div ref={messagesEndRef} className="h-4" />
             </div>
 
             <form onSubmit={(e) => {
