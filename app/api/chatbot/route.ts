@@ -85,6 +85,14 @@ export async function POST(request: Request) {
                         - Gestão de projetos industriais
                         - Qualidade e conformidade em projetos industriais
 
+                        Use formatação Markdown quando apropriado:
+                        - **Negrito** para termos importantes
+                        - *Itálico* para ênfase
+                        - Listas numeradas para passos sequenciais
+                        - Listas com marcadores para itens não ordenados
+                        - \`código\` para termos técnicos
+                        - Links quando relevante
+
                         Se o usuário fizer perguntas não relacionadas a estes temas, 
                         responda educadamente que você é especializado em assuntos de 
                         comissionamento industrial e serviços da Comissiona Pro, e 
