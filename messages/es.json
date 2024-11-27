@@ -427,6 +427,12 @@
     "privacy": "Privacidad",
     "rights": "Todos los derechos reservados."
   },
+  "chat": {
+    "clearHistory": "Limpiar Historial",
+    "send": "Enviar",
+    "sending": "Enviando...",
+    "placeholder": "Escribe tu mensaje..."
+  },
   "routes": {
     "projects": "/proyectos",
     "contact": "/contacto"

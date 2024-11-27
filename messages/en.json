@@ -428,6 +428,12 @@
     "privacy": "Privacy",
     "rights": "All rights reserved."
   },
+  "chat": {
+    "clearHistory": "Clear History",
+    "send": "Send",
+    "sending": "Sending...",
+    "placeholder": "Type your message..."
+  },
   "routes": {
     "projects": "/projects",
     "contact": "/contact"
