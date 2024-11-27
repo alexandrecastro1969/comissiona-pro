@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, KeyboardEvent, useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 // Definindo os tipos
 type Message = {
@@ -86,7 +88,7 @@ export default function ChatInterface() {
         <div className="max-w-2xl mx-auto p-4">
             {/* Histórico de mensagens */}
             <div className="mb-4 space-y-4 max-h-[500px] overflow-y-auto">
-                {messages.map((msg, index) => (
+                {messages.map((msg) => (
                     <div
                         key={msg.timestamp}
                         className={`p-3 rounded-lg ${
@@ -95,8 +97,65 @@ export default function ChatInterface() {
                                 : 'bg-gray-100 mr-auto max-w-[80%]'
                         }`}
                     >
-                        <p className="whitespace-pre-wrap">{msg.content}</p>
-                        <small className="text-gray-500 text-xs">
+                        {msg.role === 'user' ? (
+                            <p className="whitespace-pre-wrap">{msg.content}</p>
+                        ) : (
+                            <div className="prose prose-sm max-w-none">
+                                <ReactMarkdown
+                                    remarkPlugins={[remarkGfm]}
+                                    components={{
+                                        strong: ({node, children}) => (
+                                            <strong className="font-bold">{children}</strong>
+                                        ),
+                                        em: ({node, children}) => (
+                                            <em className="italic">{children}</em>
+                                        ),
+                                        h1: ({node, children}) => (
+                                            <h1 className="text-xl font-bold my-2">{children}</h1>
+                                        ),
+                                        h2: ({node, children}) => (
+                                            <h2 className="text-lg font-bold my-2">{children}</h2>
+                                        ),
+                                        h3: ({node, children}) => (
+                                            <h3 className="text-md font-bold my-2">{children}</h3>
+                                        ),
+                                        p: ({node, children}) => (
+                                            <p className="my-2">{children}</p>
+                                        ),
+                                        ul: ({node, children}) => (
+                                            <ul className="list-disc ml-4 my-2">{children}</ul>
+                                        ),
+                                        ol: ({node, children}) => (
+                                            <ol className="list-decimal ml-4 my-2">{children}</ol>
+                                        ),
+                                        li: ({node, children}) => (
+                                            <li className="my-1">{children}</li>
+                                        ),
+                                        code: ({className, children, ...props}: any) => {
+                                            const match = /language-(\w+)/.exec(className || '');
+                                            return (
+                                                <code className="bg-gray-200 px-1 rounded" {...props}>
+                                                    {children}
+                                                </code>
+                                            );
+                                        },
+                                        a: ({node, href, children}) => (
+                                            <a 
+                                                href={href}
+                                                className="text-blue-600 hover:underline" 
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                {children}
+                                            </a>
+                                        ),
+                                    }}
+                                >
+                                    {msg.content}
+                                </ReactMarkdown>
+                            </div>
+                        )}
+                        <small className="text-gray-500 text-xs block mt-2">
                             {new Date(msg.timestamp).toLocaleTimeString()}
                         </small>
                     </div>
