@@ -4,6 +4,7 @@ import { useState, KeyboardEvent, useEffect, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 // @ts-ignore
 import remarkGfm from 'remark-gfm';
+import { useTranslations } from 'next-intl';
 
 // Definindo os tipos
 type Message = {
@@ -13,6 +14,7 @@ type Message = {
 };
 
 export default function ChatInterface() {
+    const t = useTranslations('chat');
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState<Message[]>([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -202,7 +204,7 @@ export default function ChatInterface() {
                         onChange={(e) => setMessage(e.target.value)}
                         onKeyDown={handleKeyPress}
                         className="w-full p-2 border rounded-lg resize-none"
-                        placeholder="Digite sua mensagem..."
+                        placeholder={t('placeholder')}
                         rows={3}
                     />
                 </div>
@@ -212,14 +214,14 @@ export default function ChatInterface() {
                         onClick={clearHistory}
                         className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition-colors"
                     >
-                        Limpar Histórico
+                        {t('clearHistory')}
                     </button>
                     <button
                         type="submit"
                         disabled={isLoading || !message.trim()}
                         className="bg-blue-500 text-white px-4 py-2 rounded-lg disabled:opacity-50 hover:bg-blue-600 transition-colors"
                     >
-                        {isLoading ? 'Enviando...' : 'Enviar'}
+                        {isLoading ? t('sending') : t('send')}
                     </button>
                 </div>
             </form>
