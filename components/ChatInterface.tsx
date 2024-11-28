@@ -121,7 +121,7 @@ export default function ChatInterface() {
                 >
                     {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
                 </button>
-                <span className="text-sm font-medium text-gray-500 dark:text-gray-300">
+                <span className="text-sm font-medium text-white">
                     Chat
                 </span>
             </div>
