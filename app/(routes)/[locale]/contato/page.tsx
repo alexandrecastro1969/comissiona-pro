@@ -1,13 +1,30 @@
+'use client'
+
+import { useState } from 'react'
 import Image from 'next/image'
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { MapPin, Phone, Mail, Clock } from 'lucide-react'
-import { getTranslations } from 'next-intl/server'
+import { useTranslations } from 'next-intl'
 
-export default async function Contato({ params: { locale } }: { params: { locale: string } }) {
-  const t = await getTranslations('contact')
+type FormData = {
+  nome: string
+  email: string
+  telefone: string
+  mensagem: string
+}
+
+export default function Contato() {
+  const t = useTranslations('contact')
+  const [formData, setFormData] = useState<FormData>({
+    nome: '',
+    email: '',
+    telefone: '',
+    mensagem: ''
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const informacoes = [
     {
@@ -42,6 +59,37 @@ export default async function Contato({ params: { locale } }: { params: { locale
     }
   ]
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        alert(t('form.success'))
+        setFormData({
+          nome: '',
+          email: '',
+          telefone: '',
+          mensagem: ''
+        })
+      } else {
+        alert(t('form.error'))
+      }
+    } catch (error) {
+      alert(t('form.error'))
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <div className="relative min-h-screen">
       <div className="fixed inset-0 z-0">
@@ -73,7 +121,7 @@ export default async function Contato({ params: { locale } }: { params: { locale
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="backdrop-blur-sm bg-white/90 h-full transform transition-all duration-300 hover:scale-[1.01]">
                 <CardContent className="p-6 flex flex-col justify-between h-full">
-                  <div>
+                  <form onSubmit={handleSubmit}>
                     <h2 className="text-2xl font-bold mb-6">{t('form.title')}</h2>
                     <div className="space-y-4">
                       <div>
@@ -82,6 +130,8 @@ export default async function Contato({ params: { locale } }: { params: { locale
                         </label>
                         <Input
                           id="nome"
+                          value={formData.nome}
+                          onChange={(e) => setFormData(prev => ({ ...prev, nome: e.target.value }))}
                           placeholder={t('form.name.placeholder')}
                           required
                           className="bg-white/50"
@@ -95,6 +145,8 @@ export default async function Contato({ params: { locale } }: { params: { locale
                         <Input
                           id="email"
                           type="email"
+                          value={formData.email}
+                          onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
                           placeholder={t('form.email.placeholder')}
                           required
                           className="bg-white/50"
@@ -107,6 +159,8 @@ export default async function Contato({ params: { locale } }: { params: { locale
                         </label>
                         <Input
                           id="telefone"
+                          value={formData.telefone}
+                          onChange={(e) => setFormData(prev => ({ ...prev, telefone: e.target.value }))}
                           placeholder={t('form.phone.placeholder')}
                           className="bg-white/50"
                         />
@@ -118,6 +172,8 @@ export default async function Contato({ params: { locale } }: { params: { locale
                         </label>
                         <Textarea
                           id="mensagem"
+                          value={formData.mensagem}
+                          onChange={(e) => setFormData(prev => ({ ...prev, mensagem: e.target.value }))}
                           placeholder={t('form.message.placeholder')}
                           rows={4}
                           required
@@ -125,13 +181,17 @@ export default async function Contato({ params: { locale } }: { params: { locale
                         />
                       </div>
                     </div>
-                  </div>
 
-                  <div className="mt-6">
-                    <Button type="submit" className="w-full">
-                      {t('form.submit')}
-                    </Button>
-                  </div>
+                    <div className="mt-6">
+                      <Button 
+                        type="submit" 
+                        className="w-full"
+                        disabled={isSubmitting}
+                      >
+                        {isSubmitting ? t('form.submitting') : t('form.submit')}
+                      </Button>
+                    </div>
+                  </form>
                 </CardContent>
               </Card>
 

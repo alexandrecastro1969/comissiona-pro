@@ -186,14 +186,14 @@
       "alt": "Imagen de Fondo Contacto"
     },
     "form": {
-      "title": "Envíanos un Mensaje",
+      "title": "Envía tu Mensaje",
       "name": {
         "label": "Nombre",
         "placeholder": "Tu nombre completo"
       },
       "email": {
-        "label": "Correo electrónico",
-        "placeholder": "tu@email.com"
+        "label": "Correo",
+        "placeholder": "tu@correo.com"
       },
       "phone": {
         "label": "Teléfono",
@@ -203,7 +203,10 @@
         "label": "Mensaje",
         "placeholder": "Escribe tu mensaje..."
       },
-      "submit": "Enviar Mensaje"
+      "submit": "Enviar Mensaje",
+      "submitting": "Enviando...",
+      "success": "¡Mensaje enviado con éxito!",
+      "error": "Error al enviar el mensaje. Inténtalo de nuevo."
     },
     "address": {
       "title": "Dirección",

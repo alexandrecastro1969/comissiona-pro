@@ -10,9 +10,9 @@
     },
     "highlights": {
       "title": "Nossos Números",
-      "experience": "Anos de Experiência",
-      "projects": "Projetos Concluídos",
-      "satisfaction": "Clientes Satisfeitos"
+    "experience": "Anos de Experiência",
+    "projects": "Projetos Concluídos",
+    "satisfaction": "Clientes Satisfeitos"
     },
     "cards": {
       "title": "Nossas Soluções",
@@ -203,7 +203,10 @@
         "label": "Mensagem",
         "placeholder": "Digite sua mensagem..."
       },
-      "submit": "Enviar Mensagem"
+      "submit": "Enviar Mensagem",
+      "submitting": "Enviando...",
+      "success": "Mensagem enviada com sucesso!",
+      "error": "Erro ao enviar mensagem. Tente novamente."
     },
     "address": {
       "title": "Endereço",
