@@ -4,19 +4,20 @@ import nodemailer from 'nodemailer'
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    
-    // Configurar o transporter do nodemailer
+
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT),
-      secure: false, // true para porta 465, false para outras portas
+      secure: false,
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
+      tls: {
+        rejectUnauthorized: false
+      }
     })
 
-    // Preparar o conteúdo do email
     const mailOptions = {
       from: process.env.EMAIL_FROM,
       to: process.env.EMAIL_TO,
@@ -37,14 +38,18 @@ export async function POST(request: Request) {
       `
     }
 
-    // Enviar o email
-    await transporter.sendMail(mailOptions)
+    const info = await transporter.sendMail(mailOptions)
 
     return NextResponse.json({ success: true })
-  } catch (error) {
-    console.error('Erro ao enviar email:', error)
+  } catch (error: any) {
+    console.error('Erro completo:', {
+      message: error?.message,
+      stack: error?.stack,
+      code: error?.code
+    })
+
     return NextResponse.json(
-      { error: 'Erro ao processar mensagem' },
+      { error: error?.message || 'Erro ao processar mensagem' },
       { status: 500 }
     )
   }
