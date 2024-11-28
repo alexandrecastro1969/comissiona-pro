@@ -3,7 +3,6 @@
     "background": {
       "alt": "Petrochemical Industry"
     },
-   
     "hero": {
       "title": "Industrial Commissioning",
       "subtitle": "Excellence and Innovation",
@@ -180,7 +179,7 @@
       "description": "Our trajectory at Braskem has given us a unique perspective on industrial commissioning. We participated in crucial projects such as the P2 and P3 Pilot Plants, as well as the PP3 greenfield project in Paulínia, developing innovative and efficient methodologies for industrial commissioning."
     }
   },
-    "contact": {
+  "contact": {
     "title": "Contact Us",
     "subtitle": "We are ready to assist you",
     "background": {
@@ -208,7 +207,6 @@
       "submitting": "Sending...",
       "success": "Message sent successfully!",
       "error": "Error sending message. Please try again."
-    }
     },
     "address": {
       "title": "Address",
@@ -225,6 +223,7 @@
     "hours": {
       "title": "Business Hours",
       "schedule": "Monday to Friday: 9AM to 6PM"
+    }
   },
   "privacy": {
     "title": "Privacy Policy",
