@@ -63,7 +63,8 @@ export default function Contato() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-
+    console.log('Iniciando envio...') // Debug
+  
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -72,12 +73,17 @@ export default function Contato() {
         },
         body: JSON.stringify(formData),
       })
-
+  
+      console.log('Resposta recebida:', response.ok) // Debug
+  
       if (response.ok) {
+        console.log('Chamando toast success...') // Debug
         toast.success(t('form.success'), {
-          duration: 3000,
-          position: 'top-right'
+          duration: 5000,
+          position: 'top-center', // Mudando a posição
+          className: 'z-50', // Garantindo que fique acima de tudo
         })
+        
         setFormData({
           nome: '',
           email: '',
@@ -85,15 +91,19 @@ export default function Contato() {
           mensagem: ''
         })
       } else {
+        console.log('Chamando toast error...') // Debug
         toast.error(t('form.error'), {
-          duration: 3000,
-          position: 'top-right'
+          duration: 5000,
+          position: 'top-center',
+          className: 'z-50',
         })
       }
     } catch (error) {
+      console.log('Erro capturado:', error) // Debug
       toast.error(t('form.error'), {
-          duration: 3000,
-          position: 'top-right'
+        duration: 5000,
+        position: 'top-center',
+        className: 'z-50',
       })
     } finally {
       setIsSubmitting(false)
