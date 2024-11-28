@@ -1,5 +1,6 @@
 'use client'
 
+import { toast } from "sonner"
 import { useState } from 'react'
 import Image from 'next/image'
 import { Card, CardContent } from "@/components/ui/card"
@@ -73,7 +74,10 @@ export default function Contato() {
       })
 
       if (response.ok) {
-        alert(t('form.success'))
+        toast.success(t('form.success'), {
+          duration: 3000,
+          position: 'top-right'
+        })
         setFormData({
           nome: '',
           email: '',
@@ -81,10 +85,16 @@ export default function Contato() {
           mensagem: ''
         })
       } else {
-        alert(t('form.error'))
+        toast.error(t('form.error'), {
+          duration: 3000,
+          position: 'top-right'
+        })
       }
     } catch (error) {
-      alert(t('form.error'))
+      toast.error(t('form.error'), {
+          duration: 3000,
+          position: 'top-right'
+      })
     } finally {
       setIsSubmitting(false)
     }
