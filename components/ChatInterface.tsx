@@ -31,7 +31,6 @@ export default function ChatInterface() {
         text: isDark ? 'text-white' : 'text-gray-900',
         input: isDark ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' : 'bg-white border-gray-200 text-gray-900'
     });
-
     const scrollToBottom = () => {
         messagesEndRef.current?.scrollIntoView({
             behavior: "smooth",
@@ -111,7 +110,6 @@ export default function ChatInterface() {
     };
 
     const themeClasses = getThemeClasses(theme === 'dark');
-
     return (
         <div className="fixed bottom-4 right-4 z-50">
             <div className="flex items-center justify-end mb-2 space-x-2">
@@ -134,10 +132,15 @@ export default function ChatInterface() {
             </button>
 
             {isChatOpen && (
-                <div className={`fixed bottom-20 right-4 w-[400px] h-[500px] max-h-[calc(100vh-180px)] 
+                <div className={`fixed bottom-20 
+                    w-[90vw] md:w-[400px] 
+                    h-[60vh] md:h-[500px] 
+                    max-h-[calc(100vh-180px)] 
                     ${themeClasses.chat} rounded-lg shadow-xl border
                     transition-all duration-300 transform animate-slideIn
-                    flex flex-col`}>
+                    flex flex-col
+                    sm:right-4 sm:w-[350px]
+                    right-[50%] translate-x-[50%] md:translate-x-0 md:right-4`}>
                     <div className={`flex-1 overflow-y-auto p-4 space-y-4 text-sm ${themeClasses.text}`}>
                         {messages.map((msg) => (
                             <div
@@ -148,7 +151,7 @@ export default function ChatInterface() {
                                         : themeClasses.message.assistant
                                 } animate-fadeIn`}
                             >
-                                {msg.role === 'user' ? (
+                                                                {msg.role === 'user' ? (
                                     <p className="whitespace-pre-wrap">{msg.content}</p>
                                 ) : (
                                     <div className="prose prose-sm max-w-none dark:prose-invert">
