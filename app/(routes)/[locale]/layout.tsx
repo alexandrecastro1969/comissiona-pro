@@ -4,6 +4,7 @@ import { Navbar } from '@/components/navbar'
 import { NextIntlClientProvider } from 'next-intl'
 import { ThemeProvider } from 'next-themes'
 import { notFound } from 'next/navigation'
+import { Toaster } from 'sonner'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -32,6 +33,7 @@ export default async function LocaleLayout({
                 {children}
               </main>
             </div>
+            <Toaster richColors />
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>
