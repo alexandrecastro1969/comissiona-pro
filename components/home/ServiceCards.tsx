@@ -16,14 +16,14 @@ export default function ServiceCards() {
     {
       titleKey: "cards.projects.title",
       descriptionKey: "cards.projects.description",
-      icone: <Briefcase className="h-6 w-6 text-primary" />,
+      icone: <Briefcase className="h-6 w-6" />,
       linkKey: "projects",
       buttonKey: "cards.projects.button"
     },
     {
       titleKey: "cards.contact.title",
       descriptionKey: "cards.contact.description",
-      icone: <PhoneCall className="h-6 w-6 text-primary" />,
+      icone: <PhoneCall className="h-6 w-6" />,
       linkKey: "contact",
       buttonKey: "cards.contact.button"
     }
@@ -34,20 +34,23 @@ export default function ServiceCards() {
       {cards.map((card, index) => (
         <Card 
           key={index} 
-          className="backdrop-blur-sm bg-white/90 transform transition-all duration-300 hover:scale-[1.02]"
+          className="backdrop-blur-sm bg-gray-800/80 transform transition-all duration-300 hover:scale-[1.02]"
         >
           <CardContent className="p-6 text-center flex flex-col h-full">
-            <div className="flex justify-center mb-4">
+            <div className="flex justify-center mb-4 text-white">
               {card.icone}
             </div>
-            <h3 className="text-xl font-semibold mb-4">
+            <h3 className="text-xl font-semibold mb-4 text-white">
               {t(card.titleKey)}
             </h3>
-            <p className="text-gray-600 flex-grow mb-6">
+            <p className="text-gray-200 flex-grow mb-6">
               {t(card.descriptionKey)}
             </p>
             <Link href={routesT(card.linkKey)} className="w-full">
-              <Button variant="outline" className="w-full bg-white/10 hover:bg-primary hover:text-white">
+              <Button 
+                variant="outline" 
+                className="w-full bg-transparent hover:bg-white/10 text-white border-white/20"
+              >
                 {t(card.buttonKey)}
               </Button>
             </Link>
