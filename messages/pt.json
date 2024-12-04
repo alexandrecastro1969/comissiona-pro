@@ -281,7 +281,6 @@
       "alt": "Imagem de Fundo Projetos"
     },
     "projectTitles": {
-      "sibur": "Sibur - Tobolsk - Rússia (Treinamento remoto)",
       "pms": "PMS - Paulínia (Treinamento) - Triunfo (Estágio)",
       "pp3": "PP3 Paulínia - Braskem",
       "p4": "Planta Piloto P4 - Braskem",
@@ -299,10 +298,6 @@
       "pilot": "Planta Piloto"
     },
     "scope": {
-      "polymerizationTraining": "Fornecer prática e suporte ao aprendizado relacionado aos processos de polimerização, especialmente tecnologia Spheripol",
-      "ppExtrusion": "Fornecer prática e suporte ao aprendizado relacionado aos processos de extrusão de polipropileno",
-      "processEfficiency": "Fornecer prática e suporte ao aprendizado relacionado aos processos de otimização de processos",
-      "qualityBenchmarks": "Fornecer prática e suporte ao aprendizado relacionado aos processos de estabelecimento de benchmarks de qualidade",
       "processSafety": "Segurança do processo",
       "automation": "Automação",
       "electrical": "Elétrica",
@@ -316,8 +311,6 @@
       "startup": "Partida"
     },
     "challenges": {
-      "timeZone": "Diferença de fuso horário",
-      "translation": "Tradução de documentação técnica",
       "hours480": "Carga horária de 480h",
       "weekly8h": "Carga semanal de 8h/dia",
       "onsite4months": "Estágio on site de 4 meses em planta em operação",
@@ -334,8 +327,6 @@
       "zeroIncidents": "Zero incidentes durante execução"
     },
     "results": {
-      "deepLearning": "Aprendizado profundo sobre a tecnologia",
-      "satisfactoryAnswers": "Respostas satisfatórias às demandas apresentadas",
       "knowledge": "Transferência de conhecimento profundo sobre a tecnologia",
       "safety": "Criação de uma cultura de segurança ligada a cada tarefa",
       "team": "Grande apoio da equipe formada durante todo o projeto",
@@ -352,7 +343,6 @@
       "pioneerUnivation": "Implementação pioneira de tecnologia Univation"
     },
     "tags": {
-      "remote": "Remoto",
       "petrochemical": "Petroquímica",
       "spheripol": "Spheripol",
       "training": "Treinamento",
