@@ -9,6 +9,27 @@ export default async function Projetos({ params: { locale } }: { params: { local
 
   const projetos = [
     {
+      titulo: t('projectTitles.sibur'),
+      tecnologia: "Spheripol",
+      periodo: "12/2020",
+      tipo: t('types.training'),
+      escopo: [
+        t('scope.polymerizationTraining'),
+        t('scope.ppExtrusion'),
+        t('scope.processEfficiency'),
+        t('scope.qualityBenchmarks')
+      ],
+      desafios: [
+        t('challenges.timeZone'),
+        t('challenges.translation')
+      ],
+      resultados: [
+        t('results.deepLearning'),
+        t('results.satisfactoryAnswers')
+      ],
+      tags: [t('tags.petrochemical'), t('tags.spheripol'), t('tags.training'), t('tags.remote')]
+    },
+    {
       titulo: t('projectTitles.pms'),
       tecnologia: "Spheripol",
       periodo: "2007",

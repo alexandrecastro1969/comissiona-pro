@@ -281,6 +281,7 @@
       "alt": "Projects Background Image"
     },
     "projectTitles": {
+      "sibur": "Sibur - Tobolsk - Russia (Remote Training)",
       "pms": "PMS - Paulínia (Training) - Triunfo (Internship)",
       "pp3": "PP3 Paulínia - Braskem",
       "p4": "Pilot Plant P4 - Braskem",
@@ -298,6 +299,10 @@
       "pilot": "Pilot Plant"
     },
     "scope": {
+      "polymerizationTraining": "Provide high-quality practice and support for learning related to polymerization processes, especially Spheripol technology",
+      "ppExtrusion": "Polypropylene extrusion, issues, and troubleshooting",
+      "processEfficiency": "Best practices to improve process efficiency",
+      "qualityBenchmarks": "Polypropylene quality benchmarks and reducing off-spec products",
       "processSafety": "Process safety",
       "automation": "Automation",
       "electrical": "Electrical",
@@ -311,6 +316,8 @@
       "startup": "Startup"
     },
     "challenges": {
+      "timeZone": "Challenging time zone",
+      "translation": "Simultaneous translation (English to Russian)",
       "hours480": "480 hours workload",
       "weekly8h": "8h/day weekly schedule",
       "onsite4months": "4-month on-site internship at operating plant",
@@ -327,6 +334,8 @@
       "zeroIncidents": "Zero incidents during execution"
     },
     "results": {
+      "deepLearning": "Deep learning about the technology",
+      "satisfactoryAnswers": "Satisfactory responses to the demands presented",
       "knowledge": "Deep technology knowledge transfer",
       "safety": "Creation of task-linked safety culture",
       "team": "Strong team support throughout the project",
@@ -343,6 +352,7 @@
       "pioneerUnivation": "Pioneer Univation technology implementation"
     },
     "tags": {
+      "remote": "Remote",
       "petrochemical": "Petrochemical",
       "spheripol": "Spheripol",
       "training": "Training",

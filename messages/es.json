@@ -281,6 +281,7 @@
       "alt": "Imagen de Fondo Proyectos"
     },
     "projectTitles": {
+      "sibur": "Sibur - Tobolsk - Rusia (Entrenamiento remoto)",
       "pms": "PMS - Paulínia (Entrenamiento) - Triunfo (Pasantía)",
       "pp3": "PP3 Paulínia - Braskem",
       "p4": "Planta Piloto P4 - Braskem",
@@ -298,6 +299,10 @@
       "pilot": "Planta Piloto"
     },
     "scope": {
+      "polymerizationTraining": "Proporcionar práctica de alta calidad y apoyo al aprendizaje relacionado con los procesos de polimerización, especialmente la tecnología Spheripol",
+      "ppExtrusion": "Extrusión de polipropileno, problemas y solución",
+      "processEfficiency": "Mejores prácticas para mejorar la eficiencia del proceso",
+      "qualityBenchmarks": "Puntos de referencia de calidad del polipropileno y reducción de productos fuera de especificación",
       "processSafety": "Seguridad del proceso",
       "automation": "Automatización",
       "electrical": "Eléctrica",
@@ -311,6 +316,8 @@
       "startup": "Arranque"
     },
     "challenges": {
+      "deepLearning": "Aprendizaje profundo sobre la tecnología",
+      "satisfactoryAnswers": "Respuestas satisfactorias a las demandas presentadas",
       "hours480": "Carga horaria de 480h",
       "weekly8h": "Carga semanal de 8h/día",
       "onsite4months": "Práctica en sitio de 4 meses en planta en operación",
@@ -343,6 +350,7 @@
       "pioneerUnivation": "Implementación pionera de tecnología Univation"
     },
     "tags": {
+      "remote": "Remoto",
       "petrochemical": "Petroquímica",
       "spheripol": "Spheripol",
       "training": "Entrenamiento",
