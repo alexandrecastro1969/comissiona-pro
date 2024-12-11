@@ -1,13 +1,13 @@
 export interface BlogPost {
-    slug: string;
-    title: string;
-    content: string;
-    excerpt: string;
-    author?: string;
-    coverImage?: string;
-    tags?: string[];
-    readingTime?: string;
-  }
+  slug: string;
+  title: string;
+  content: string;
+  description: string;
+  authors: string[];
+  tags: string[];
+  heroImage?: string;
+  readingTime: string;
+}
   
   export interface BlogPrompt {
     type: 'research' | 'news' | 'tutorial';
@@ -29,6 +29,7 @@ export interface BlogPost {
   export interface MetaData {
     title: string;
     description: string;
-    author?: string;
+    authors?: string[];
     tags?: string[];
+    heroImage?: string;
   }

@@ -19,9 +19,8 @@ export async function getAllPosts(): Promise<BlogPost[]> {
         return getPostBySlug(slug);
       });
   
-    // Retorna os posts sem ordenação por data
     return allPosts;
-  }
+}
 
 export function getPostBySlug(slug: string): BlogPost {
   const fullPath = path.join(postsDirectory, `${slug}.mdx`);
@@ -34,9 +33,10 @@ export function getPostBySlug(slug: string): BlogPost {
     slug,
     title: metadata.title,
     content: content,
-    excerpt: metadata.description || '',
-    author: metadata.author,
-    tags: metadata.tags,
+    description: metadata.description,
+    authors: metadata.authors || [],
+    tags: metadata.tags || [],
+    heroImage: metadata.heroImage || '/images/commissioning-bg.webp',
     readingTime: calculateReadingTime(content)
   };
 }
