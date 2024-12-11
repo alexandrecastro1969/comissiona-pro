@@ -24,10 +24,10 @@ export default async function BlogPage() {
               className="backdrop-blur-sm bg-white/5 rounded-xl overflow-hidden 
                 hover:bg-white/10 transition-all border border-white/10"
             >
-              {post.coverImage && (
+              {post.heroImage && (
                 <div className="relative h-48 w-full">
                   <Image
-                    src={post.coverImage}
+                    src={post.heroImage}
                     alt={post.title}
                     width={1200}
                     height={630}
@@ -37,7 +37,13 @@ export default async function BlogPage() {
               )}
               
               <div className="p-6">
-                <div className="flex items-center text-sm text-gray-400 mb-2">
+                <div className="flex items-center gap-3 text-sm text-gray-400 mb-2">
+                  {post.authors && post.authors.length > 0 && (
+                    <>
+                      <span>{post.authors.join(', ')}</span>
+                      <span>•</span>
+                    </>
+                  )}
                   <span>{post.readingTime}</span>
                 </div>
 
@@ -51,7 +57,7 @@ export default async function BlogPage() {
                 </h2>
 
                 <p className="text-gray-300 mb-4 line-clamp-3">
-                  {post.excerpt}
+                  {post.description}
                 </p>
 
                 {post.tags && (
