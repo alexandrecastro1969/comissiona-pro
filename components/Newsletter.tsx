@@ -19,7 +19,7 @@ export function Newsletter() {
   }
 
   return (
-    <div className="mt-16 p-8 bg-gray-50 dark:bg-gray-800/50 rounded-xl relative overflow-hidden">
+    <div className="mt-8 md:mt-16 p-4 md:p-8 bg-gray-50 dark:bg-gray-800/50 rounded-xl relative overflow-hidden">
       
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
@@ -32,25 +32,29 @@ export function Newsletter() {
       </div>
 
       <div className="relative z-10">
-        <h3 className="text-2xl font-semibold mb-4">
+        <h3 className="text-xl md:text-2xl font-semibold mb-2 md:mb-4">
           Fique por dentro das novidades!
         </h3>
-        <p className="text-gray-600 dark:text-gray-300 mb-6">
+        <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-4 md:mb-6">
           Assine nossa newsletter para receber as últimas atualizações sobre comissionamento.
         </p>
-        <form onSubmit={handleSubmit} className="flex gap-3">
+        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Seu melhor e-mail"
-            className="flex-1 px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+            className="flex-1 px-4 py-2 md:py-3 rounded-lg border border-gray-200 dark:border-gray-700 
+              dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all
+              text-sm md:text-base"
             required
           />
           <button
             type="submit"
             disabled={isLoading}
-            className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all disabled:opacity-70 disabled:cursor-not-allowed flex items-center gap-2"
+            className="px-4 md:px-6 py-2 md:py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 
+              transition-all disabled:opacity-70 disabled:cursor-not-allowed flex items-center 
+              justify-center gap-2 text-sm md:text-base"
           >
             {isLoading ? (
               <>
