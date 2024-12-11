@@ -7,24 +7,13 @@ import { Newsletter } from '@/components/Newsletter';
 import { TableOfContents } from '@/components/TableOfContents';
 import { MDXComponents } from '@/components/MDXComponents';
 import { ScrollToTop } from '@/components/ScrollToTop';
+import { setRequestLocale } from 'next-intl/server';
 
 interface BlogPostPageProps {
   params: {
     locale: string;
     slug: string;
   };
-}
-
-export async function generateStaticParams() {
-  const posts = await getAllPosts();
-  const locales = ['pt', 'en']; // seus idiomas suportados
-  
-  return locales.flatMap(locale => 
-    posts.map((post) => ({
-      locale,
-      slug: post.slug,
-    }))
-  );
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps) {
@@ -42,7 +31,21 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
   }
 }
 
+export async function generateStaticParams() {
+  const posts = await getAllPosts();
+  const locales = ['pt', 'en'];
+  
+  return locales.flatMap(locale => 
+    posts.map((post) => ({
+      locale,
+      slug: post.slug,
+    }))
+  );
+}
+
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  setRequestLocale(params.locale);
+  
   try {
     const post = getPostBySlug(params.slug);
 
