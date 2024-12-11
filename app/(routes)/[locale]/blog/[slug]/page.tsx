@@ -10,8 +10,21 @@ import { ScrollToTop } from '@/components/ScrollToTop';
 
 interface BlogPostPageProps {
   params: {
+    locale: string;
     slug: string;
   };
+}
+
+export async function generateStaticParams() {
+  const posts = await getAllPosts();
+  const locales = ['pt', 'en']; // seus idiomas suportados
+  
+  return locales.flatMap(locale => 
+    posts.map((post) => ({
+      locale,
+      slug: post.slug,
+    }))
+  );
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps) {
@@ -19,7 +32,7 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     const post = getPostBySlug(params.slug);
     return {
       title: `${post.title} | Comissiona Pro`,
-      description: post.description, // Alterado de excerpt para description
+      description: post.description,
     };
   } catch {
     return {
@@ -29,13 +42,6 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
   }
 }
 
-export async function generateStaticParams() {
-  const posts = await getAllPosts();
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
-}
-
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   try {
     const post = getPostBySlug(params.slug);
@@ -43,7 +49,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     return (
       <div className="container mx-auto px-4 py-8">
         <Link
-          href="/blog"
+          href={`/${params.locale}/blog`}
           className="inline-flex items-center text-white hover:text-blue-200 mb-8 transition-colors group"
         >
           <span className="mr-2 transform group-hover:-translate-x-1 transition-transform">←</span>
