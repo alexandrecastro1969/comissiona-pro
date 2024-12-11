@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image' // Adicionar este import
 import { getPostBySlug, getAllPosts } from '@/lib/blog/utils';
 import { notFound } from 'next/navigation';
 import { MDXRemote } from 'next-mdx-remote/rsc';
@@ -84,10 +85,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
               {post.coverImage && (
                 <div className="relative h-[400px] w-full mb-8 rounded-xl overflow-hidden">
-                  <img
+                  <Image
                     src={post.coverImage}
                     alt={post.title}
-                    className="object-cover w-full h-full"
+                    width={1200}
+                    height={630}
+                    className="w-full h-auto rounded-xl"
                   />
                 </div>
               )}
