@@ -42,7 +42,10 @@ export const pathnames: PathnameConfig = {
     en: '/privacy',
     es: '/privacidad',
     pt: '/privacidade'
-  }
+  },
+  // Blog apenas em português
+  '/blog': '/blog',
+  '/blog/[slug]': '/blog/[slug]'
 } as const;
 
 export const { Link, redirect, usePathname, useRouter } = createSharedPathnamesNavigation({

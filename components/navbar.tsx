@@ -9,7 +9,8 @@ export async function Navbar() {
     { href: "/sobre" as const, label: t('about') },
     { href: "/servicos" as const, label: t('services') },
     { href: "/projects" as const, label: t('projects') },
-    { href: "/contato" as const, label: t('contact') }
+    { href: "/contato" as const, label: t('contact') },
+    { href: "/blog" as const, label: "Blog" }  // Blog adicionado aqui
   ]
 
   const legalItems = [

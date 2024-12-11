@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
 const withNextIntl = require('next-intl/plugin')('./i18n/request.ts');
+const withMDX = require('@next/mdx')();
 
 const nextConfig = {
+  // Configuração MDX
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+
   // Configurações de cache
   onDemandEntries: {
     maxInactiveAge: 25 * 1000,
@@ -44,4 +48,4 @@ const nextConfig = {
   }
 }
 
-module.exports = withNextIntl(nextConfig);
+module.exports = withNextIntl(withMDX(nextConfig));

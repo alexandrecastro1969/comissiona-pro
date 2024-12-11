@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation'
 
 type NavbarContentProps = {
   navItems: Array<{
-    href: "/" | "/sobre" | "/servicos" | "/projects" | "/contato"
+    href: "/" | "/sobre" | "/servicos" | "/projects" | "/contato" | "/blog"
     label: string
   }>
   legalItems: Array<{

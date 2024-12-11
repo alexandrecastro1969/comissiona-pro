@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 import { pathnames } from '@/navigation'
 
 interface NavLinkProps {
-  href: "/" | "/sobre" | "/servicos" | "/projects" | "/contato" | "/termos" | "/privacidade"
+  href: "/" | "/sobre" | "/servicos" | "/projects" | "/contato" | "/termos" | "/privacidade" | "/blog"
   label: string
   className?: string
 }

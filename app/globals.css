@@ -67,3 +67,91 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Estilos para a Matriz de Decisão */
+.decision-matrix {
+  @apply w-full border-collapse my-6 text-sm;
+}
+
+.decision-matrix th {
+  @apply bg-slate-800 text-white p-3 text-left;
+}
+
+.decision-matrix td {
+  @apply p-3 border border-slate-200;
+}
+
+.decision-matrix td[data-value="Ideal"] {
+  @apply bg-green-100 text-green-800;
+}
+
+.decision-matrix td[data-value="Bom"] {
+  @apply bg-blue-100 text-blue-800;
+}
+
+.decision-matrix td[data-value="Possível"] {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+.decision-matrix td[data-value="Não recomendado"] {
+  @apply bg-red-100 text-red-800;
+}
+
+/* Estilos para o Table of Contents */
+.toc {
+  @apply bg-white/5 p-6 rounded-xl border border-white/10 backdrop-blur-sm;
+  @apply transition-all duration-200;
+  @apply sticky top-24;
+  @apply max-h-[calc(100vh-8rem)] overflow-y-auto;
+}
+
+/* Versão mobile */
+@media (max-width: 1024px) {
+  .toc {
+    @apply bg-white/5 backdrop-blur-lg;
+    @apply p-4;
+    @apply border-white/10;
+    @apply sticky top-20;
+    @apply max-h-[70vh];
+    @apply mx-0;
+  }
+
+  .toc button[class*="lg:hidden"] {
+    @apply bg-white/10 hover:bg-white/20;
+    @apply p-2;
+    @apply -mr-1;
+  }
+}
+
+.toc::-webkit-scrollbar {
+  @apply w-1;
+}
+
+.toc::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.toc::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-white/20;
+}
+
+.toc .active {
+  @apply text-blue-400 font-medium;
+}
+
+/* Ajustes para links do TOC com hover effect mais pronunciado */
+.toc button {
+  @apply block py-1.5 px-2 rounded transition-all duration-200;
+  @apply text-sm text-gray-400;
+  @apply w-full text-left;
+  @apply hover:bg-white/10 hover:text-white hover:translate-x-1;
+}
+
+/* Ajustes para níveis de indentação */
+.toc li {
+  @apply my-1;
+}
+
+.toc h2 {
+  @apply text-lg font-semibold mb-4 text-white;
+}
