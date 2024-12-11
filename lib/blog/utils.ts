@@ -23,22 +23,37 @@ export async function getAllPosts(): Promise<BlogPost[]> {
 }
 
 export function getPostBySlug(slug: string): BlogPost {
-  const fullPath = path.join(postsDirectory, `${slug}.mdx`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
-  const { data, content } = matter(fileContents);
+  try {
+    const fullPath = path.join(postsDirectory, `${slug}.mdx`);
+    
+    if (!fs.existsSync(fullPath)) {
+      console.error('Arquivo não encontrado:', fullPath);
+      throw new Error(`Post não encontrado: ${slug}`);
+    }
 
-  const metadata = data as MetaData;
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const { data, content } = matter(fileContents);
+    const metadata = data as MetaData;
 
-  return {
-    slug,
-    title: metadata.title,
-    content: content,
-    description: metadata.description,
-    authors: metadata.authors || [],
-    tags: metadata.tags || [],
-    heroImage: metadata.heroImage || '/images/commissioning-bg.webp',
-    readingTime: calculateReadingTime(content)
-  };
+    if (!validateMetadata(metadata)) {
+      console.error('Metadata inválido:', metadata);
+      throw new Error(`Metadata inválido para o post: ${slug}`);
+    }
+
+    return {
+      slug,
+      title: metadata.title,
+      content: content,
+      description: metadata.description,
+      authors: metadata.authors || [],
+      tags: metadata.tags || [],
+      heroImage: metadata.heroImage || '/images/commissioning-bg.webp',
+      readingTime: calculateReadingTime(content)
+    };
+  } catch (error) {
+    console.error('Erro ao ler post:', error);
+    throw error;
+  }
 }
 
 export function calculateReadingTime(content: string): string {
