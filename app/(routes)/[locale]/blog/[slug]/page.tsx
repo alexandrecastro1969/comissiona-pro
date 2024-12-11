@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image' // Adicionar este import
+import Image from 'next/image'
 import { getPostBySlug, getAllPosts } from '@/lib/blog/utils';
 import { notFound } from 'next/navigation';
 import { MDXRemote } from 'next-mdx-remote/rsc';
@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     const post = getPostBySlug(params.slug);
     return {
       title: `${post.title} | Comissiona Pro`,
-      description: post.excerpt,
+      description: post.description, // Alterado de excerpt para description
     };
   } catch {
     return {
@@ -58,12 +58,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <h1 className="text-4xl font-bold mb-6 text-white">{post.title}</h1>
                 
                 <div className="flex items-center gap-3 text-gray-200 mb-4 text-sm">
-                  {post.author && (
-                    <>
-                      <span>{post.author}</span>
-                      <span>•</span>
-                    </>
-                  )}
+                  {post.authors && post.authors.map((author, index) => (
+                    <span key={index}>{author}</span>
+                  ))}
+                  <span>•</span>
                   <span>{post.readingTime}</span>
                 </div>
 
@@ -83,10 +81,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 )}
               </div>
 
-              {post.coverImage && (
+              {post.heroImage && (
                 <div className="relative h-[400px] w-full mb-8 rounded-xl overflow-hidden">
                   <Image
-                    src={post.coverImage}
+                    src={post.heroImage}
                     alt={post.title}
                     width={1200}
                     height={630}
