@@ -6,7 +6,7 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const nonce = Buffer.from(crypto.randomUUID()).toString('base64');
 
-  // Configuração do CSP
+  // Configuração do CSP atualizada
   const cspHeader = `
     default-src 'self';
     script-src 'self' 'unsafe-inline' 'unsafe-eval' https://vercel.live;
@@ -16,7 +16,9 @@ export function middleware(request: NextRequest) {
     object-src 'none';
     base-uri 'self';
     form-action 'self';
-    frame-ancestors 'none';
+    frame-src 'self' https://vercel.live;
+    frame-ancestors 'self' https://vercel.live;
+    connect-src 'self' https://vercel.live;
     block-all-mixed-content;
     upgrade-insecure-requests;
   `;
