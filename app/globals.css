@@ -70,30 +70,52 @@
 
 /* Estilos para a Matriz de Decisão */
 .decision-matrix {
-  @apply w-full border-collapse my-6 text-sm;
+  @apply w-full border-collapse my-6 text-sm md:text-base;
 }
 
 .decision-matrix th {
-  @apply bg-slate-800 text-white p-3 text-left;
+  @apply bg-slate-800 text-white p-2 md:p-3 text-left whitespace-nowrap;
 }
 
 .decision-matrix td {
-  @apply p-3 border border-slate-200;
+  @apply p-2 md:p-3 border border-slate-200 whitespace-nowrap;
+}
+
+/* Dark mode adjustments */
+.dark .decision-matrix td {
+  @apply border-slate-700;
 }
 
 .decision-matrix td[data-value="Ideal"] {
-  @apply bg-green-100 text-green-800;
+  @apply bg-green-950/50 text-green-400;
 }
 
 .decision-matrix td[data-value="Bom"] {
-  @apply bg-blue-100 text-blue-800;
+  @apply bg-blue-950/50 text-blue-400;
 }
 
 .decision-matrix td[data-value="Possível"] {
-  @apply bg-yellow-100 text-yellow-800;
+  @apply bg-yellow-950/50 text-yellow-400;
 }
 
 .decision-matrix td[data-value="Não recomendado"] {
+  @apply bg-red-950/50 text-red-400;
+}
+
+/* Light mode adjustments */
+:not(.dark) .decision-matrix td[data-value="Ideal"] {
+  @apply bg-green-100 text-green-800;
+}
+
+:not(.dark) .decision-matrix td[data-value="Bom"] {
+  @apply bg-blue-100 text-blue-800;
+}
+
+:not(.dark) .decision-matrix td[data-value="Possível"] {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+:not(.dark) .decision-matrix td[data-value="Não recomendado"] {
   @apply bg-red-100 text-red-800;
 }
 
