@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import toast from 'react-hot-toast'
 
 export function Newsletter() {
   const [isLoading, setIsLoading] = useState(false)
@@ -10,18 +11,31 @@ export function Newsletter() {
     e.preventDefault()
     setIsLoading(true)
     
-    // TODO: Implementar integração com serviço de newsletter
-    await new Promise(resolve => setTimeout(resolve, 1000)) // Simulação
-    
-    setIsLoading(false)
-    setEmail('')
-    // TODO: Mostrar mensagem de sucesso
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      })
+
+      if (!response.ok) {
+        throw new Error('Erro ao processar inscrição')
+      }
+
+      toast.success('Inscrição realizada! Verifique seu email.')
+      setEmail('')
+    } catch (error) {
+      console.error('Erro:', error)
+      toast.error('Erro ao processar sua inscrição. Tente novamente.')
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (
     <div className="mt-8 md:mt-16 p-4 md:p-8 bg-gray-50 dark:bg-gray-800/50 rounded-xl relative overflow-hidden">
-      
-      {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <svg className="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
           <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
