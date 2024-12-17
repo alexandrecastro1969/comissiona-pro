@@ -50,21 +50,21 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     const post = getPostBySlug(params.slug);
 
     return (
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-4 md:py-8">
         <Link
           href={`/${params.locale}/blog`}
-          className="inline-flex items-center text-white hover:text-blue-200 mb-8 transition-colors group"
+          className="inline-flex items-center text-white hover:text-blue-200 mb-4 md:mb-8 transition-colors group"
         >
           <span className="mr-2 transform group-hover:-translate-x-1 transition-transform">←</span>
           Voltar para o Blog
         </Link>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-8">
           {/* Conteúdo Principal */}
           <main className="lg:col-span-8 order-2 lg:order-1">
             <article>
-              <div className="border-b border-gray-200/10 pb-8 mb-8">
-                <h1 className="text-4xl font-bold mb-6 text-white">{post.title}</h1>
+              <div className="border-b border-gray-200/10 pb-4 md:pb-8 mb-4 md:mb-8">
+                <h1 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6 text-white">{post.title}</h1>
                 
                 <div className="flex items-center gap-3 text-gray-200 mb-4 text-sm">
                   {post.authors && post.authors.map((author, index) => (
@@ -91,13 +91,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </div>
 
               {post.heroImage && (
-                <div className="relative h-[400px] w-full mb-8 rounded-xl overflow-hidden">
+                <div className="relative w-full mb-4 md:mb-8 rounded-xl overflow-hidden">
                   <Image
                     src={post.heroImage}
                     alt={post.title}
                     width={1200}
                     height={630}
                     className="w-full h-auto rounded-xl"
+                    priority
                   />
                 </div>
               )}
@@ -116,7 +117,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </div>
             </article>
 
-            <div className="mt-16">
+            <div className="mt-8 md:mt-16">
               <Newsletter />
             </div>
           </main>
@@ -127,7 +128,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </aside>
         </div>
         
-        {/* Botão de voltar ao topo aqui */}
         <ScrollToTop />
       </div>
     );
