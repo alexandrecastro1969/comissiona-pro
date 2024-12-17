@@ -24,7 +24,19 @@ export async function POST(request: Request) {
       )
     }
 
-    // Criar ou atualizar inscrição
+    // Verificar se o email já existe e está ativo
+    const existingSubscriber = await prisma.newsletterSubscriber.findUnique({
+      where: { email }
+    })
+
+    if (existingSubscriber?.active) {
+      return NextResponse.json(
+        { error: 'Este email já está inscrito em nossa newsletter!' },
+        { status: 400 }
+      )
+    }
+
+    // Se não existe ou está inativo, criar/atualizar inscrição
     const subscriber = await prisma.newsletterSubscriber.upsert({
       where: { email },
       update: { active: true },
