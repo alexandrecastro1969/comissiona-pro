@@ -53,11 +53,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <div className="container mx-auto px-4 py-4 md:py-8">
         <Link
           href={`/${params.locale}/blog`}
-          className="inline-flex items-center text-white hover:text-blue-200 mb-4 md:mb-8 transition-colors group"
-        >
-          <span className="mr-2 transform group-hover:-translate-x-1 transition-transform">←</span>
-          Voltar para o Blog
-        </Link>
+          className="inline-flex items-center px-4 py-2 mb-8 
+            bg-blue-600 text-white rounded-lg hover:bg-blue-700 
+            transition-all group"
+>
+  <span className="mr-2 transform group-hover:-translate-x-1 transition-transform">←</span>
+  Voltar para o Blog
+</Link>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-8">
           {/* Conteúdo Principal */}
