@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
+import { prisma } from '@/lib/prisma'
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
@@ -23,6 +24,16 @@ export async function POST(request: Request) {
       )
     }
 
+    // Criar ou atualizar inscrição
+    const subscriber = await prisma.newsletterSubscriber.upsert({
+      where: { email },
+      update: { active: true },
+      create: { 
+        email,
+        active: true
+      },
+    })
+
     // Enviar email de confirmação
     await transporter.sendMail({
       from: process.env.EMAIL_FROM,
@@ -34,6 +45,13 @@ export async function POST(request: Request) {
           <p>Sua inscrição em nossa newsletter foi confirmada com sucesso.</p>
           <p>Você receberá nossas próximas atualizações sobre comissionamento neste email.</p>
           <p style="margin-top: 20px;">Atenciosamente,<br>Equipe de Comissionamento</p>
+          <hr style="margin: 20px 0; border: none; border-top: 1px solid #eee;" />
+          <p style="color: #666; font-size: 12px;">
+            Para cancelar sua inscrição, 
+            <a href="${process.env.NEXT_PUBLIC_BASE_URL}/unsubscribe?token=${subscriber.token}">
+              clique aqui
+            </a>
+          </p>
         </div>
       `,
     })
