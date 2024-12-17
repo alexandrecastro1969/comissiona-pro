@@ -19,16 +19,20 @@ export function Newsletter() {
         },
         body: JSON.stringify({ email }),
       })
-
+  
+      const data = await response.json()
+  
       if (!response.ok) {
-        throw new Error('Erro ao processar inscrição')
+        // Usar a mensagem específica retornada pela API
+        throw new Error(data.error)
       }
-
+  
       toast.success('Inscrição realizada! Verifique seu email.')
       setEmail('')
-    } catch (error) {
+    } catch (error: any) {
       console.error('Erro:', error)
-      toast.error('Erro ao processar sua inscrição. Tente novamente.')
+      // Mostrar a mensagem específica retornada pela API
+      toast.error(error.message || 'Erro ao processar sua inscrição. Tente novamente.')
     } finally {
       setIsLoading(false)
     }
