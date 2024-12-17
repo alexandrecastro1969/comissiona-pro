@@ -33,8 +33,11 @@ export async function POST(request: Request) {
         active: true
       },
     })
+     // Construir a URL base
+     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 
+     (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000')
 
-    // Enviar email de confirmação
+    // Enviar email
     await transporter.sendMail({
       from: process.env.EMAIL_FROM,
       to: email,
@@ -48,7 +51,7 @@ export async function POST(request: Request) {
           <hr style="margin: 20px 0; border: none; border-top: 1px solid #eee;" />
           <p style="color: #666; font-size: 12px;">
             Para cancelar sua inscrição, 
-            <a href="${process.env.NEXT_PUBLIC_BASE_URL}/unsubscribe?token=${subscriber.token}">
+            <a href="${baseUrl}/unsubscribe?token=${subscriber.token}">
               clique aqui
             </a>
           </p>
