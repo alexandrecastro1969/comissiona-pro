@@ -17,7 +17,11 @@ export default async function BlogPage() {
     <div className="min-h-screen bg-gray-900">
       <BlogHero />
       
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-4 pt-0 pb-2"> {/* Mudamos py-2 para pt-0 pb-2 */}
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
+          Últimas Publicações
+        </h2>
+
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
             <article 
