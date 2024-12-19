@@ -1,9 +1,9 @@
+// components/BlogHero.tsx
 import Image from 'next/image'
 
-// components/BlogHero.tsx
 export function BlogHero() {
   return (
-    <div className="relative h-[200px] mb-6 overflow-hidden"> {/* Reduzido de mb-12 para mb-6 */}
+    <div className="relative h-[150px] mb-4 overflow-hidden">
       {/* Imagem de fundo com overlay escuro */}
       <div className="absolute inset-0">
         <Image

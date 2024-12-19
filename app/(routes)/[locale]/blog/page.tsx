@@ -1,3 +1,4 @@
+// app/(routes)/[locale]/blog/page.tsx
 import { getAllPosts } from '@/lib/blog/utils';
 import { BlogHero } from '@/components/BlogHero';
 import { Newsletter } from '@/components/Newsletter';
@@ -16,7 +17,7 @@ export default async function BlogPage() {
     <div className="min-h-screen bg-gray-900">
       <BlogHero />
       
-      <div className="container mx-auto px-4 py-6"> {/* Reduzido de py-12 para py-6 */}
+      <div className="container mx-auto px-4 py-4">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
             <article 
