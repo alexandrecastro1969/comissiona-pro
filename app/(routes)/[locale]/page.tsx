@@ -3,7 +3,6 @@ import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Hero from '@/components/home/Hero';
 import { useTranslations } from 'next-intl';
-import ChatInterface from '@/components/ChatInterface';
 
 // Componentes carregados dinamicamente
 const Highlights = dynamic(() => import('@/components/home/Highlights'), {
@@ -54,11 +53,6 @@ export default function Home() {
           <Suspense fallback={<div className="h-[400px] animate-pulse bg-gray-200/20 rounded-lg" />}>
             <ServiceCards />
           </Suspense>
-
-          {/* Chat Interface */}
-          <div className="mt-16">
-            <ChatInterface />
-          </div>
         </main>
       </div>
     </div>
