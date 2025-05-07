@@ -1,0 +1,9 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Rotas específicas podem ser protegidas, se necessário
+# Disallow: /rota-protegida/
+
+# Sitemap
+Sitemap: https://comissiona-pro.vercel.app/sitemap.xml 
