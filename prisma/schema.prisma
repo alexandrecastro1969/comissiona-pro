@@ -13,11 +13,9 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model NewsletterSubscriber {
+// Modelo placeholder para que o Prisma possa gerar o cliente
+// Este modelo pode ser removido posteriormente quando não for mais necessário
+model Placeholder {
   id        String   @id @default(cuid())
-  email     String   @unique
-  token     String   @unique @default(cuid())
-  active    Boolean  @default(true)
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
 }

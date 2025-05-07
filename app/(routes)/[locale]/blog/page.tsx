@@ -1,7 +1,5 @@
 // app/(routes)/[locale]/blog/page.tsx
 import { getAllPosts } from '@/lib/blog/utils';
-import { BlogHero } from '@/components/BlogHero';
-import { Newsletter } from '@/components/Newsletter';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -14,10 +12,8 @@ export default async function BlogPage() {
   const posts = await getAllPosts();
 
   return (
-    <div className="min-h-screen bg-gray-900">
-      <BlogHero />
-      
-      <div className="container mx-auto px-4 pt-0 pb-2"> {/* Mudamos py-2 para pt-0 pb-2 */}
+    <div className="min-h-screen">
+      <div className="container mx-auto px-4 pt-8 pb-2">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
           Últimas Publicações
         </h2>
@@ -26,8 +22,8 @@ export default async function BlogPage() {
           {posts.map((post) => (
             <article 
               key={post.slug}
-              className="backdrop-blur-sm bg-white/5 rounded-xl overflow-hidden 
-                hover:bg-white/10 transition-all border border-white/10"
+              className="bg-white rounded-xl overflow-hidden 
+                transition-all border border-gray-200 shadow-md hover:shadow-lg"
             >
               {post.heroImage && (
                 <div className="relative h-48 w-full">
@@ -42,7 +38,7 @@ export default async function BlogPage() {
               )}
               
               <div className="p-6">
-                <div className="flex items-center gap-3 text-sm text-gray-400 mb-2">
+                <div className="flex items-center gap-3 text-sm text-gray-600 mb-2">
                   {post.authors && post.authors.length > 0 && (
                     <>
                       <span>{post.authors.join(', ')}</span>
@@ -52,16 +48,16 @@ export default async function BlogPage() {
                   <span>{post.readingTime}</span>
                 </div>
 
-                <h2 className="text-xl font-semibold mb-3 text-white">
+                <h2 className="text-xl font-semibold mb-3 text-gray-900">
                   <Link 
                     href={`/blog/${post.slug}`}
-                    className="hover:text-blue-400 transition-colors"
+                    className="hover:text-blue-600 transition-colors"
                   >
                     {post.title}
                   </Link>
                 </h2>
 
-                <p className="text-gray-300 mb-4 line-clamp-3">
+                <p className="text-gray-700 mb-4 line-clamp-3">
                   {post.description}
                 </p>
 
@@ -70,8 +66,8 @@ export default async function BlogPage() {
                     {post.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1 text-sm bg-blue-900/30 text-blue-200 
-                          rounded-full hover:bg-blue-800/40 transition-colors"
+                        className="px-3 py-1 text-sm bg-blue-100 text-blue-700 
+                          rounded-full hover:bg-blue-200 transition-colors"
                       >
                         {tag}
                       </span>
@@ -81,10 +77,6 @@ export default async function BlogPage() {
               </div>
             </article>
           ))}
-        </div>
-
-        <div className="mt-16">
-          <Newsletter />
         </div>
       </div>
     </div>

@@ -3,7 +3,6 @@ import Image from 'next/image'
 import { getPostBySlug, getAllPosts } from '@/lib/blog/utils';
 import { notFound } from 'next/navigation';
 import { MDXRemote } from 'next-mdx-remote/rsc';
-import { Newsletter } from '@/components/Newsletter';
 import { TableOfContents } from '@/components/TableOfContents';
 import { MDXComponents } from '@/components/MDXComponents';
 import { ScrollToTop } from '@/components/ScrollToTop';
@@ -118,10 +117,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 />
               </div>
             </article>
-
-            <div className="mt-8 md:mt-16">
-              <Newsletter />
-            </div>
           </main>
 
           {/* Sidebar com TOC */}
