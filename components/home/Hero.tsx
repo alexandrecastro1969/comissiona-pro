@@ -4,7 +4,7 @@ export default function Hero() {
   const t = useTranslations('home.hero')
 
   return (
-    <div className="max-w-4xl mx-auto text-center text-white space-y-8">
+    <div className="max-w-4xl mx-auto text-center text-white space-y-8 pt-20">
       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
         {t('title')}
       </h1>

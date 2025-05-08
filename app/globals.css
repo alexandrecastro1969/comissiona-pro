@@ -177,3 +177,35 @@
 .toc h2 {
   @apply text-lg font-semibold mb-4 text-white;
 }
+
+/* Animação para o banner de cross-promotion */
+@keyframes bannerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-banner-fade-in {
+  animation: bannerFadeIn 0.5s ease-out forwards;
+}
+
+/* Animação para componentes sem framer-motion */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.7s ease-out forwards;
+}

@@ -13,6 +13,10 @@ const ServiceCards = dynamic(() => import('@/components/home/ServiceCards'), {
   loading: () => <div className="h-[400px] animate-pulse bg-gray-200/20 rounded-lg" />
 });
 
+const AiPromotion = dynamic(() => import('@/components/home/AiPromotion'), {
+  loading: () => <div className="h-[300px] animate-pulse bg-gray-200/20 rounded-lg" />
+});
+
 const blurDataURL = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQrJiEwST4oLTU5MTU4N0Y+QUZENjM6OUNGRVFRVl9aXWVmbmdpRlFRZWf/2wBDAR...";
 
 export const metadata = {
@@ -43,11 +47,15 @@ export default function Home() {
 
       {/* Conteúdo */}
       <div className="relative z-10 min-h-screen flex flex-col">
-        <main className="flex-grow container mx-auto px-4 py-16">
+        <main className="flex-grow container mx-auto px-4 py-24">
           <Hero />
           
           <Suspense fallback={<div className="h-[300px] animate-pulse bg-gray-200/20 rounded-lg" />}>
             <Highlights />
+          </Suspense>
+          
+          <Suspense fallback={<div className="h-[300px] animate-pulse bg-gray-200/20 rounded-lg" />}>
+            <AiPromotion />
           </Suspense>
 
           <Suspense fallback={<div className="h-[400px] animate-pulse bg-gray-200/20 rounded-lg" />}>

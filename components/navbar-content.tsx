@@ -4,6 +4,7 @@ import { NavLink } from './nav-link'
 import { LanguageLinks } from './language-links'
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
+import Link from 'next/link'
 
 type NavbarContentProps = {
   navItems: Array<{
@@ -94,6 +95,30 @@ export function NavbarContent({ navItems, legalItems }: NavbarContentProps) {
                   <NavLink href={item.href} label={item.label} />
                 </li>
               ))}
+              <li>
+                <a
+                  href="https://comissiona-ai-v2.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-purple-600 hover:text-purple-800 px-4 py-2 transition-colors rounded-md"
+                >
+                  Comissiona AI
+                  <svg 
+                    width="14" 
+                    height="14" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  >
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </li>
             </ul>
             <div className="flex items-center space-x-6">
               <ul className="flex space-x-6">
@@ -123,6 +148,30 @@ export function NavbarContent({ navItems, legalItems }: NavbarContentProps) {
                 />
               </li>
             ))}
+            <li className="block">
+              <a 
+                href="https://comissiona-ai-v2.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 text-purple-600 hover:text-purple-800 px-3 py-2 rounded-md hover:bg-gray-100"
+              >
+                Comissiona AI
+                <svg 
+                  width="14" 
+                  height="14" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                >
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </li>
             {legalItems.map((item) => (
               <li key={item.href} className="block">
                 <NavLink 
