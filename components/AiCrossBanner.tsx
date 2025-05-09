@@ -10,12 +10,21 @@ const AiCrossBanner: React.FC = () => {
   const pathname = usePathname();
   const locale = useLocale();
   
-  // Usando try/catch para garantir que não quebra se a tradução falhar
+  // Movendo o hook para o topo do componente (fora de qualquer condição)
+  const t = useTranslations('home.aiCrossBanner');
+  
+  // Usando try/catch apenas para o acesso às traduções, não para o hook
   let title = '';
   let description = '';
   let ctaText = '';
   
   try {
+    // Tentando usar as traduções
+    title = t('title');
+    description = t('description');
+    ctaText = t('cta');
+  } catch (error) {
+    console.error('Failed to load translations for banner:', error);
     // Definindo textos padrão baseados no idioma
     if (locale === 'en') {
       title = "Discover Comissiona AI";
@@ -31,26 +40,15 @@ const AiCrossBanner: React.FC = () => {
       description = "Assistente virtual com IA para classificação de pendências";
       ctaText = "Experimentar agora";
     }
-    
-    // Tentar carregar as traduções, mas usar os padrões se falhar
-    const t = useTranslations('home.aiCrossBanner');
-    title = t('title');
-    description = t('description');
-    ctaText = t('cta');
-  } catch (error) {
-    console.error('Failed to load translations for banner:', error);
-    // Mantém os textos padrão definidos acima
   }
   
   // Função para verificar se estamos na página inicial (home)
-  const isHomePage = () => {
-    // Verificando os padrões de URL da home page em todos os idiomas
-    return pathname === '/pt' || pathname === '/en' || pathname === '/es' || pathname === '/';
-  };
+  // Transformando em variável ao invés de função para usar como dependência no useEffect
+  const isHomePage = pathname === '/pt' || pathname === '/en' || pathname === '/es' || pathname === '/';
 
   useEffect(() => {
     // Só mostrar o banner na página inicial
-    if (!isHomePage()) return;
+    if (!isHomePage) return;
     
     // Verificar se o banner já foi fechado nesta sessão
     const bannerClosed = sessionStorage.getItem('aiCrossBannerClosed');
@@ -63,7 +61,7 @@ const AiCrossBanner: React.FC = () => {
       
       return () => clearTimeout(timer);
     }
-  }, [pathname]);
+  }, [pathname, isHomePage]);
 
   const closeBanner = () => {
     setIsVisible(false);
@@ -73,7 +71,7 @@ const AiCrossBanner: React.FC = () => {
   };
 
   // Não renderizar se não estiver na página inicial ou se o banner foi fechado/não está visível
-  if (!isHomePage() || wasClosed || !isVisible) return null;
+  if (!isHomePage || wasClosed || !isVisible) return null;
 
   return (
     <div className="fixed bottom-5 right-5 z-50 max-w-xs bg-gradient-to-r from-purple-600 to-purple-500 text-white p-4 rounded-lg shadow-lg animate-banner-fade-in">
