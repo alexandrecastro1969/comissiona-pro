@@ -32,10 +32,6 @@
         {
           "key": "Permissions-Policy",
           "value": "camera=(), microphone=(), geolocation=()"
-        },
-        {
-          "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'strict-dynamic' 'nonce-NzEyNThjN2MtZGY0Zi00YjljLWE4YjQtMGFjMmQ1N2U3NzE0' https://vercel.live; style-src 'self' 'nonce-NzEyNThjN2MtZGY0Zi00YjljLWE4YjQtMGFjMmQ1N2U3NzE0'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://*;"
         }
       ]
     }
