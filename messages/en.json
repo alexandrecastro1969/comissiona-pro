@@ -4,9 +4,22 @@
       "alt": "Petrochemical Industry"
     },
     "hero": {
-      "title": "Industrial Commissioning",
-      "subtitle": "Excellence and Innovation",
-      "description": "Specialized solutions for safe and efficient industrial plant startup"
+      "title": "Avoid critical failures in commissioning with real field experience + AI applied to pending issues control.",
+      "subtitle": "Solutions that combine practical experience and artificial intelligence for total commissioning control, from receipt to handover.",
+      "description": "",
+      "challenges": {
+        "title": "Have you faced this before?",
+        "hidden_issues": "Hidden issues that delay plant startup",
+        "invisible_failures": "Failures that don't show up in reports",
+        "performance_loss": "Performance loss due to invisible errors in commissioning",
+        "not_alone": "You're not alone — and you don't have to accept this as 'part of the process'."
+      },
+      "benefits": {
+        "title": "With Comissiona Pro, you get:",
+        "ai_control": "Intelligent control of pending items with AI",
+        "kpis": "KPIs by phase and subsystem",
+        "methodology": "Methodology validated by those who experienced commissioning in practice"
+      }
     },
     "highlights": {
       "title": "Our Numbers",
@@ -45,6 +58,22 @@
       "copyright": "© 2024 Comissiona Pro. All rights reserved.",
       "terms": "Terms of Use",
       "privacy": "Privacy Policy"
+    },
+    "aiPromotion": {
+      "title": "Your commissioning faster, more reliable and issue-free with AI support",
+      "description": "Use AI to detect and prioritize critical issues before they become real problems.",
+      "features": {
+        "conversational": "Conversational interface",
+        "classification": "Automatic classification",
+        "semantic": "Semantic search",
+        "learning": "Continuous learning"
+      },
+      "cta": "Discover Comissiona AI"
+    },
+    "aiCrossBanner": {
+      "title": "Discover Comissiona AI",
+      "description": "Virtual assistant with AI for issue classification",
+      "cta": "Try it now"
     }
   },
   "services": {

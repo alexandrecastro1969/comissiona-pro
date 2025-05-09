@@ -4,9 +4,22 @@
       "alt": "Indústria Petroquímica"
     },
     "hero": {
-      "title": "Comissionamento Industrial",
-      "subtitle": "Excelência e Inovação",
-      "description": "Soluções especializadas para partida segura e eficiente de plantas industriais"
+      "title": "Evite falhas críticas no comissionamento com experiência real de campo + IA aplicada ao controle de pendências.",
+      "subtitle": "Soluções que unem experiência prática e inteligência artificial para controle total do comissionamento, do recebimento ao handover.",
+      "description": "",
+      "challenges": {
+        "title": "Já enfrentou isso?",
+        "hidden_issues": "Pendências ocultas que atrasam a partida da planta",
+        "invisible_failures": "Falhas que não aparecem nos relatórios",
+        "performance_loss": "Queda de rendimento por erros invisíveis no comissionamento",
+        "not_alone": "Você não está sozinho — e não precisa aceitar isso como 'parte do processo'."
+      },
+      "benefits": {
+        "title": "Com o Comissiona Pro, você tem:",
+        "ai_control": "Controle inteligente de pendências com IA",
+        "kpis": "KPIs por fase e subsistema",
+        "methodology": "Metodologia validada por quem viveu o comissionamento na prática"
+      }
     },
     "highlights": {
       "title": "Nossos Números",
@@ -45,6 +58,22 @@
       "copyright": "© 2024 Comissiona Pro. Todos os direitos reservados.",
       "terms": "Termos de Uso",
       "privacy": "Política de Privacidade"
+    },
+    "aiPromotion": {
+      "title": "Seu comissionamento mais rápido, confiável e sem pendências com apoio da IA",
+      "description": "Use IA para detectar e priorizar pendências críticas antes que elas virem problemas reais.",
+      "features": {
+        "conversational": "Interface conversacional",
+        "classification": "Classificação automática",
+        "semantic": "Busca semântica", 
+        "learning": "Aprendizado contínuo"
+      },
+      "cta": "Conhecer o Comissiona AI"
+    },
+    "aiCrossBanner": {
+      "title": "Conheça o Comissiona AI",
+      "description": "Assistente virtual com IA para classificação de pendências",
+      "cta": "Experimentar agora"
     }
   },
   "services": {

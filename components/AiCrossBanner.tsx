@@ -1,12 +1,57 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+import { useTranslations, useLocale } from 'next-intl';
 
 const AiCrossBanner: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [wasClosed, setWasClosed] = useState(false);
+  const pathname = usePathname();
+  const locale = useLocale();
+  
+  // Usando try/catch para garantir que não quebra se a tradução falhar
+  let title = '';
+  let description = '';
+  let ctaText = '';
+  
+  try {
+    // Definindo textos padrão baseados no idioma
+    if (locale === 'en') {
+      title = "Discover Comissiona AI";
+      description = "Virtual assistant with AI for issue classification";
+      ctaText = "Try it now";
+    } else if (locale === 'es') {
+      title = "Conoce Comissiona AI";
+      description = "Asistente virtual con IA para clasificación de pendientes";
+      ctaText = "Probar ahora";
+    } else {
+      // Português como padrão
+      title = "Conheça o Comissiona AI";
+      description = "Assistente virtual com IA para classificação de pendências";
+      ctaText = "Experimentar agora";
+    }
+    
+    // Tentar carregar as traduções, mas usar os padrões se falhar
+    const t = useTranslations('home.aiCrossBanner');
+    title = t('title');
+    description = t('description');
+    ctaText = t('cta');
+  } catch (error) {
+    console.error('Failed to load translations for banner:', error);
+    // Mantém os textos padrão definidos acima
+  }
+  
+  // Função para verificar se estamos na página inicial (home)
+  const isHomePage = () => {
+    // Verificando os padrões de URL da home page em todos os idiomas
+    return pathname === '/pt' || pathname === '/en' || pathname === '/es' || pathname === '/';
+  };
 
   useEffect(() => {
+    // Só mostrar o banner na página inicial
+    if (!isHomePage()) return;
+    
     // Verificar se o banner já foi fechado nesta sessão
     const bannerClosed = sessionStorage.getItem('aiCrossBannerClosed');
     
@@ -18,7 +63,7 @@ const AiCrossBanner: React.FC = () => {
       
       return () => clearTimeout(timer);
     }
-  }, []);
+  }, [pathname]);
 
   const closeBanner = () => {
     setIsVisible(false);
@@ -27,7 +72,8 @@ const AiCrossBanner: React.FC = () => {
     sessionStorage.setItem('aiCrossBannerClosed', 'true');
   };
 
-  if (wasClosed || !isVisible) return null;
+  // Não renderizar se não estiver na página inicial ou se o banner foi fechado/não está visível
+  if (!isHomePage() || wasClosed || !isVisible) return null;
 
   return (
     <div className="fixed bottom-5 right-5 z-50 max-w-xs bg-gradient-to-r from-purple-600 to-purple-500 text-white p-4 rounded-lg shadow-lg animate-banner-fade-in">
@@ -71,9 +117,9 @@ const AiCrossBanner: React.FC = () => {
         </div>
         
         <div>
-          <h4 className="font-semibold text-sm mb-1">Conheça o Comissiona AI</h4>
+          <h4 className="font-semibold text-sm mb-1">{title}</h4>
           <p className="text-xs text-purple-100 mb-2">
-            Assistente virtual com IA para classificação de pendências
+            {description}
           </p>
           
           <a 
@@ -82,7 +128,7 @@ const AiCrossBanner: React.FC = () => {
             rel="noopener noreferrer"
             className="text-xs bg-white text-purple-600 px-3 py-1 rounded-full inline-flex items-center gap-1 hover:bg-purple-50 transition-colors"
           >
-            Experimentar agora
+            {ctaText}
             <svg 
               width="12" 
               height="12" 

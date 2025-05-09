@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl';
 import React from 'react';
 
 export default function AiPromotion() {
-  const t = useTranslations('home');
+  const t = useTranslations('home.aiPromotion');
   
   return (
     <div 
@@ -33,25 +33,24 @@ export default function AiPromotion() {
           {/* Conteúdo */}
           <div>
             <h2 className="text-xl font-bold text-white mb-2">
-              Potencialize seu comissionamento com IA
+              {t('title')}
             </h2>
             <p className="text-purple-100 mb-4 text-sm">
-              Conheça o Comissiona AI, nosso assistente virtual com IA para classificação 
-              automática de pendências e resolução de problemas.
+              {t('description')}
             </p>
             
             <div className="flex flex-wrap gap-2 justify-center mb-4">
               <span className="inline-flex items-center text-xs text-purple-200 bg-purple-800/40 px-2 py-1 rounded-full">
-                <span className="mr-1 text-purple-300">✓</span> Interface conversacional
+                <span className="mr-1 text-purple-300">✓</span> {t('features.conversational')}
               </span>
               <span className="inline-flex items-center text-xs text-purple-200 bg-purple-800/40 px-2 py-1 rounded-full">
-                <span className="mr-1 text-purple-300">✓</span> Classificação automática
+                <span className="mr-1 text-purple-300">✓</span> {t('features.classification')}
               </span>
               <span className="inline-flex items-center text-xs text-purple-200 bg-purple-800/40 px-2 py-1 rounded-full">
-                <span className="mr-1 text-purple-300">✓</span> Busca semântica
+                <span className="mr-1 text-purple-300">✓</span> {t('features.semantic')}
               </span>
               <span className="inline-flex items-center text-xs text-purple-200 bg-purple-800/40 px-2 py-1 rounded-full">
-                <span className="mr-1 text-purple-300">✓</span> Aprendizado contínuo
+                <span className="mr-1 text-purple-300">✓</span> {t('features.learning')}
               </span>
             </div>
             
@@ -62,7 +61,7 @@ export default function AiPromotion() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 bg-gradient-to-r from-purple-600 to-purple-400 text-white px-4 py-2 text-sm rounded-full font-medium shadow-md hover:shadow-purple-500/30 transition-all transform hover:-translate-y-1"
             >
-              Conhecer o Comissiona AI
+              {t('cta')}
               <svg
                 width="14"
                 height="14"
