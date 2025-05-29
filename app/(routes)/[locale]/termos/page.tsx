@@ -117,3 +117,11 @@ export default async function Termos({ params: { locale } }: { params: { locale:
     </div>
   )
 }
+
+export async function generateMetadata({ params }: { params: { locale: string } }) {
+  return {
+    alternates: {
+      canonical: `https://comissiona-pro.vercel.app/${params.locale}/termos`
+    }
+  }
+}
